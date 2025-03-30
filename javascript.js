@@ -124,7 +124,7 @@ function setupSmoothScrolling() {
 function setupContactButton() {
     const contactButton = document.getElementById('contactButton');
     contactButton.addEventListener('click', function() {
-        window.location.href = 'mailto:site@compyra.com';
+        window.location.href = 'mailto:contact@compyra.com';
     });
 }
 
