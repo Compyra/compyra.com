@@ -692,12 +692,12 @@ footer {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
+    pointer-events: none;
 }/*
 TODO CHECK
 .mobile-nav-overlay {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
 }*/
 
 .mobile-nav-overlay.active {
