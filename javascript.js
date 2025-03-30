@@ -441,11 +441,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
-            <div class="mobile-language-selector">
-                <button id="mobileEn" class="language-btn active">EN</button>
-                <button id="mobileNl" class="language-btn">NL</button>
-                <button id="mobileFr" class="language-btn">FR</button>
-            </div>
+        <div class="mobile-language-selector">
+            <button id="en" class="language-btn">EN</button>
+            <button id="nl" class="language-btn">NL</button>
+            <button id="fr" class="language-btn">FR</button>
+        </div>
             <div class="mobile-theme-toggle">
                 <button id="mobileThemeToggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
@@ -454,6 +454,32 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     `;
+    
+// Add this after appending the mobile menu to the body
+const mobileLangButtons = mobileNavOverlay.querySelectorAll('.mobile-language-selector .language-btn');
+mobileLangButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const lang = this.id;
+        
+        // Update active status on mobile buttons
+        mobileLangButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // Update active status on desktop buttons
+        const desktopButtons = document.querySelectorAll('.language-selector .language-btn');
+        desktopButtons.forEach(button => {
+            button.classList.remove('active');
+            if (button.id === lang) {
+                button.classList.add('active');
+            }
+        });
+        
+        // Change language
+        changeLanguage(lang);
+    });
+});
     
     document.body.appendChild(mobileNavOverlay);
     
