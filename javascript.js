@@ -94,10 +94,10 @@ function setupMobileMenu() {
     const overlay = document.querySelector('.mobile-nav-overlay');
     
     // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', () => {
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-    });
+    // mobileMenuBtn.addEventListener('click', () => {
+    //     overlay.classList.add('active');
+    //     document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    // });
 }
 
 // Setup smooth scrolling for all anchor links
@@ -378,18 +378,18 @@ function changeLanguage(lang) {
     document.documentElement.lang = lang;
 }
 
-// Sticky header on scroll
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
+// Sticky header on scroll -> changes background color too
+// window.addEventListener('scroll', function() {
+//     const header = document.querySelector('header');
     
-    if (window.scrollY > 50) {
-        header.style.padding = '10px 0';
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.style.padding = '20px 0';
-        header.style.backgroundColor = 'white';
-    }
-});
+//     if (window.scrollY > 50) {
+//         header.style.padding = '10px 0';
+//         header.style.backgroundColor = 'rgba(82, 120, 74, 0.95)';
+//     } else {
+//         header.style.padding = '20px 0';
+//         header.style.backgroundColor = 'rgba(82, 120, 74, 0.95)';
+//     }
+// });
 
 // test
 document.addEventListener('DOMContentLoaded', function() {
