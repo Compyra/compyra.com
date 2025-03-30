@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Company Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+        .copy-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        .copy-all-button {
+            display: block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .copy-all-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Company Information</h2>
+        <div class="info">
+            <p>Name: Rami Labidi <button class="copy-button" onclick="copyText('Rami Labidi')">Copy</button></p>
+            <p>Company Name: Compyra <button class="copy-button" onclick="copyText('Compyra')">Copy</button></p>
+            <p>BTW Number: BE1012255376 <button class="copy-button" onclick="copyText('BE1012255376')">Copy</button></p>
+            <p>Email: <a href="mailto:support@compyra.com" id="contact-email">support@compyra.com</a> <button class="copy-button" onclick="copyText('support@compyra.com')">Copy</button></p>
+        </div>
+        <button class="copy-all-button" onclick="copyAll()">Copy All Information</button>
+    </div>
+
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied: ' + text);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        function copyAll() {
+            const info = `Name: Rami Labidi\nCompany Name: Compyra\nBTW Nummer: BE1012255376\nEmail: support@compyra.com\nCopied from https://www.compyra.com/info`;
+            navigator.clipboard.writeText(info).then(() => {
+                alert('All company information copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

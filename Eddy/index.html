@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuinonderhoud Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bij den Eddy</h1>
+            <p class="tagline">Professionele tuinverzorging voor uw droomtuin</p>
+        </div>
+    </header>
+
+    <section class="showcase">
+        <div class="container">
+            <div class="image-showcase">
+                <!-- Images will be inserted here by JavaScript -->
+                <button class="nav-arrow prev-arrow">&lt;</button>
+                <button class="nav-arrow next-arrow">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Onze Diensten</h2>
+            <ul>
+                <li>Tuinonderhoud - Scheren, snoeien en opkuisen tuinen.</li>
+                <li>Gazon verticuteren - wortels uitfrezen.</li>
+                <li>Vellen en snoeien van bomen. Ook in moeilijke omstandigheden.</li>
+                <li>Hout zagen en klieven.</li>
+                <li>Afbraakwerken - Betonwerken.</li>
+                <li>Algemene grondwerken.</li>
+                <li>Opritten en terrassen.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Informatie</h2>
+            <div class="contact-details">
+                <div class="contact-info">
+                    <p><strong>Naam:</strong> <span id="contact-name">Eddy Cuypers</span></p>
+                    <p><strong>Telefoon:</strong> <a href="tel:+32478335076" id="contact-phone">+32 478 33 50 76</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:bijeddycuypers@gmail.com" id="contact-email">bijeddycuypers@gmail.com</a></p>
+                    <p><strong>BTW nummer:</strong> <span id="contact-btw">BE 0767.856.552</span></p>
+                    <p><strong>Adres:</strong> <a href="https://www.google.com/maps?q=Varsenareweg+26+8490+Jabbeke" target="_blank" id="contact-address">Varsenareweg 26 8490 Jabbeke</a></p>
+                </div>
+                <div class="map">
+                    <iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5001.777419428182!2d3.1023781999999946!3d51.184274100000025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3530398934cf3%3A0x1980492f06888712!2sVarsenareweg%2026%2C%208490%20Jabbeke!5e0!3m2!1snl!2sbe!4v1743355788659!5m2!1snl!2sbe" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2>Galerij</h2>
+            <div class="thumbnails" id="gallery-thumbnails">
+                <!-- Thumbnails will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-image">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Tuinonderhoud Service. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

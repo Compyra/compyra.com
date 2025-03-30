@@ -1,0 +1,335 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+/*
+header {
+    background: linear-gradient(to right, #4caf50, #2e7d32);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}*/
+/* Toevoegen van gras effect*/
+/* Add spiky grass effect to header */
+header {
+    background: linear-gradient(to right, #4caf50, #2e7d32);
+    color: white;
+    padding: 2rem 0 3rem; /* Increased bottom padding to make room for grass */
+    text-align: center;
+    position: relative; /* Added position relative */
+}
+
+/* Grass effect styling - updated for more realistic side view */
+/* Continuous grass effect styling - resembles waves or connected string of grass */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust height for grass effect */
+    background-color: #1b5e20; /* Solid dark green base */
+    -webkit-mask-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0,100 Q10,70 20,100 Q30,60 40,100 Q50,50 60,100 Q70,40 80,100 Q90,60 100,100 Q110,50 120,100 Q130,40 140,100 Q150,60 160,100 Q170,50 180,100 Q190,40 200,100 Q210,60 220,100 Q230,50 240,100 Q250,40 260,100 Q270,60 280,100 Q290,50 300,100 Q310,40 320,100 Q330,60 340,100 Q350,50 360,100 Q370,40 380,100 Q390,60 400,100 Q410,50 420,100 Q430,40 440,100 Q450,60 460,100 Q470,50 480,100 Q490,40 500,100 Q510,60 520,100 Q530,50 540,100 Q550,40 560,100 Q570,60 580,100 Q590,50 600,100 Q610,70 620,100 Q630,60 640,100 Q650,50 660,100 Q670,40 680,100 Q690,60 700,100 Q710,50 720,100 Q730,40 740,100 Q750,60 760,100 Q770,50 780,100 Q790,40 800,100 Q810,60 820,100 Q830,50 840,100 Q850,40 860,100 Q870,60 880,100 Q890,50 900,100 Q910,40 920,100 Q930,60 940,100 Q950,50 960,100 Q970,40 980,100 Q990,60 1000,100 Q1010,50 1020,100 Q1030,40 1040,100 Q1050,60 1060,100 Q1070,50 1080,100 Q1090,40 1100,100 Q1110,60 1120,100 Q1130,50 1140,100 Q1150,40 1160,100 Q1170,60 1180,100 Q1190,50 1200,100 Z' fill='%23000000'/%3E%3C/svg%3E");
+    -webkit-mask-size: auto 100%; /* Changed to auto for proper alignment */
+    -webkit-mask-repeat: repeat-x;
+    mask-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0,100 Q10,70 20,100 Q30,60 40,100 Q50,50 60,100 Q70,40 80,100 Q90,60 100,100 Q110,50 120,100 Q130,40 140,100 Q150,60 160,100 Q170,50 180,100 Q190,40 200,100 Q210,60 220,100 Q230,50 240,100 Q250,40 260,100 Q270,60 280,100 Q290,50 300,100 Q310,40 320,100 Q330,60 340,100 Q350,50 360,100 Q370,40 380,100 Q390,60 400,100 Q410,50 420,100 Q430,40 440,100 Q450,60 460,100 Q470,50 480,100 Q490,40 500,100 Q510,60 520,100 Q530,50 540,100 Q550,40 560,100 Q570,60 580,100 Q590,50 600,100 Q610,70 620,100 Q630,60 640,100 Q650,50 660,100 Q670,40 680,100 Q690,60 700,100 Q710,50 720,100 Q730,40 740,100 Q750,60 760,100 Q770,50 780,100 Q790,40 800,100 Q810,60 820,100 Q830,50 840,100 Q850,40 860,100 Q870,60 880,100 Q890,50 900,100 Q910,40 920,100 Q930,60 940,100 Q950,50 960,100 Q970,40 980,100 Q990,60 1000,100 Q1010,50 1020,100 Q1030,40 1040,100 Q1050,60 1060,100 Q1070,50 1080,100 Q1090,40 1100,100 Q1110,60 1120,100 Q1130,50 1140,100 Q1150,40 1160,100 Q1170,60 1180,100 Q1190,50 1200,100 Z' fill='%23000000'/%3E%3C/svg%3E");
+    mask-size: auto 100%; /* Changed to auto for proper alignment */
+    mask-repeat: repeat-x;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Image Showcase */
+.showcase {
+    padding: 3rem 0;
+}
+
+.image-showcase {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+/*
+.image-showcase img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+} comment uit zie hieronder*/
+/* toon de volledige image ipv zoomed in*/
+.image-showcase img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-color: #f8f8f8; /* Added background color */
+}
+
+.image-showcase img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(46, 125, 50, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(46, 125, 50, 1);
+}
+
+.prev-arrow {
+    left: 15px;
+}
+
+.next-arrow {
+    right: 15px;
+}
+
+/* Services */
+.services {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2e7d32;
+}
+
+.services ul {
+    list-style-type: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 30px;
+}
+
+.services li:before {
+    content: "✓";
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    font-weight: bold;
+}
+
+/* Contact */
+.contact {
+    padding: 3rem 0;
+    background-color: #f1f8e9;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2e7d32;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+.map {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+}
+
+/* Gallery */
+.gallery {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2e7d32;
+}
+
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-content {
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .image-showcase {
+        height: 300px;
+    }
+    
+    .thumbnail {
+        width: 120px;
+        height: 80px;
+    }
+    
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .image-showcase {
+        height: 250px;
+    }
+    
+    .thumbnail {
+        width: 100px;
+        height: 70px;
+    }
+    
+    .nav-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
