@@ -168,7 +168,7 @@ header .container {
     align-items: center;
     padding: 20px 15px;
 }
-
+/*
 .logo h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -176,7 +176,28 @@ header .container {
     font-size: 1.8rem;
     letter-spacing: 1px;
 }
+*/
+.logo {
+    display: flex;
+    align-items: center;
+}
 
+.logo a {
+    display: block;
+}
+
+#site-logo {
+    max-height: 50px;
+    width: auto;
+    /* Adjust height as needed */
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+    #site-logo {
+        max-height: 40px;
+    }
+}
 nav ul {
     display: flex;
     gap: 30px;
