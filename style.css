@@ -186,15 +186,42 @@ header .container {
     display: block;
 }
 
-#site-logo {
+/* Logo styling for theme switching */
+.logo-light, .logo-dark {
     max-height: 50px;
     width: auto;
-    /* Adjust height as needed */
+    transition: opacity 0.5s ease;
+    padding-right: 10px;
+}
+
+/* Default (light mode) */
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+/* Dark mode */
+[data-theme="dark"] .logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: block;
 }
 
 /* For responsive design */
+/*
 @media (max-width: 768px) {
     #site-logo {
+        max-height: 40px;
+    }
+}*/
+
+@media (max-width: 768px) {
+    .logo-light, .logo-dark {
         max-height: 40px;
     }
 }
