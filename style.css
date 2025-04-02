@@ -304,6 +304,9 @@ nav ul li a:hover::after {
     cursor: pointer;
     color: var(--text-color);
 }
+.mobile-menu {
+padding-top: 18px;
+}
 
 /* Hero Section */
 .hero {
