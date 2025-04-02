@@ -219,22 +219,7 @@ header .container {
         max-height: 40px;
     }
 }*/
-#site-logo {
-    max-height: 50px;
-    width: auto;
-    transition: filter 0.3s ease;
-    padding-right: 10px;
-}
 
-[data-theme="dark"] #site-logo {
-    filter: invert(1) brightness(1.5); /* This will make dark colors light and vice versa */
-}
-
-@media (max-width: 768px) {
-    #site-logo {
-        max-height: 40px;
-    }
-}
 @media (max-width: 768px) {
     .logo-light, .logo-dark {
         max-height: 40px;
