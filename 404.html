@@ -1,235 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compyra - IT Security & Consulting</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <title>404 - Page Not Found | Compyra IT Security Consultants</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .content-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .error-card {
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: bold;
+            margin: 0;
+            color: #0f0;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+            font-family: monospace;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin: 10px 0 20px;
+            color: #fff;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .company-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 255, 0, 0.3);
+        }
+        
+        .company-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0f0;
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        .company-tagline {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .company-services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .service-badge {
+            background-color: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #0f0;
+        }
+        
+        .home-button {
+            display: inline-block;
+            background-color: #0f0;
+            color: #000;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .home-button:hover {
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .error-card {
+                padding: 25px;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .company-services {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>COMPYRA</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                    <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
-                    <li><a href="#about" data-i18n="nav.about">About</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
-                <button id="en" class="language-btn active">EN</button>
-                <button id="nl" class="language-btn">NL</button>
-                <button id="fr" class="language-btn">FR</button>
-
-                <div class="theme-toggle">
-                    <button id="themeToggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
+    <canvas id="matrix"></canvas>
+    
+    <div class="content-container">
+        <div class="error-card">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            
+            <p class="error-message">
+                Hmm, how did you end up here? It seems you've ventured into uncharted digital territory. 
+                The page you're looking for has either been moved, deleted, or never existed in the first place.
+            </p>
+            
+            <a href="https://compyra.com" class="home-button">Return to Safety</a>
+            
+            <div class="company-info">
+                <div class="company-logo">COMPYRA</div>
+                <div class="company-tagline">Securing Your Digital Future</div>
+                
+                <p>While you're here, did you know that Compyra provides comprehensive IT security and consulting services for businesses of all sizes?</p>
+                
+                <div class="company-services">
+                    <span class="service-badge">Cybersecurity</span>
+                    <span class="service-badge">Penetration Testing</span>
+                    <span class="service-badge">Web Development</span>
+                    <span class="service-badge">IT Consulting</span>
+                    <span class="service-badge">Network Security</span>
                 </div>
-            </div>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-                <div class="mobile-theme-toggle">
-                    <!--<button id="mobileThemeToggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                        <span data-i18n="theme.toggle">Dark Mode</span>
-                    </button>
-                    Note: added this elsewhere-->
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 data-i18n="hero.title">IT Security & Consulting</h1>
-                <p data-i18n="hero.subtitle">Professional cybersecurity solutions for businesses</p>
-                <div class="cta-buttons">
-                    <a href="#services" class="btn primary-btn" data-i18n="hero.services">Our Services</a>
-                    <a href="#contact" class="btn secondary-btn" data-i18n="hero.contact">Get in Touch</a>
-                </div>
+                
+                <p>Let us create secure, professional solutions tailored to your unique business needs.</p>
             </div>
         </div>
-    </section>
+    </div>
+    
+    <script>
+        // Set up the canvas
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas to full window size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // Characters to use (Japanese katakana, Latin and some keywords)
+        const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const keywords = ['Compyra', 'Security', 'IT', 'Rami', 'Consulting', 'Cybersecurity', 'Network', 'Protection', 'Solutions', 'Labidi', 'Computer', 'Future', 'Digital', 'Websites'];
+        const chars = katakana + latin + keywords.join('');
+        
+        // Configure columns
+        const fontSize = 16;
+        const columns = Math.floor(canvas.width / fontSize);
+        
+        // Drops - one per column
+        const drops = [];
+        
+        // Initialize drops
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.floor(Math.random() * -100); // Start above canvas randomly
+        }
+        
+        // Special word insertion tracking
+        const wordPositions = {};
+        keywords.forEach(word => {
+            wordPositions[word] = {
+                column: Math.floor(Math.random() * columns),
+                row: -1, // Not yet inserted
+                lastInserted: 0 // Timestamp for last insertion
+            };
+        });
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title" data-i18n="services.title">Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 data-i18n="services.security.title">Security Consultation</h3>
-                    <p data-i18n="services.security.description">Comprehensive security assessment and consultation to
-                        protect your business assets.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bug"></i>
-                    </div>
-                    <h3 data-i18n="services.pentesting.title">Penetration Testing</h3>
-                    <p data-i18n="services.pentesting.description">Identifying vulnerabilities in your systems before
-                        the bad actors do.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 data-i18n="services.development.title">Web Development</h3>
-                    <p data-i18n="services.development.description">Creating secure, responsive, and modern websites for
-                        your business needs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 data-i18n="services.it.title">IT Consulting</h3>
-                    <p data-i18n="services.it.description">Expert advice on IT infrastructure, optimization, and
-                        security improvements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Draw the matrix effect
+        function draw() {
+            // Semi-transparent black to create fade effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Green text
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+            
+            // For each column
+            for (let i = 0; i < drops.length; i++) {
+                // Check if we should insert a keyword at this position
+                let insertedKeyword = false;
+                for (const word of keywords) {
+                    const pos = wordPositions[word];
+                    const now = Date.now();
+                    
+                    // Insert a keyword about every 3-7 seconds randomly
+                    if (pos.column === i && now - pos.lastInserted > 3000 + Math.random() * 4000 && drops[i] > 0) {
+                        // Set the position to start writing the word
+                        pos.row = drops[i];
+                        pos.lastInserted = now;
+                        
+                        // Write the word vertically
+                        for (let j = 0; j < word.length; j++) {
+                            if (pos.row + j < canvas.height / fontSize) {
+                                ctx.fillStyle = 'rgba(255, 0, 255, 0.9)'; // Brighter for keywords
+                                ctx.fillText(word[j], i * fontSize, (pos.row + j) * fontSize);
+                                ctx.fillStyle = '#0F0'; // Restore green color
+                            }
+                        }
+                        
+                        // Move the drop past the word
+                        drops[i] += word.length;
+                        insertedKeyword = true;
+                        
+                        // Change column for next time
+                        pos.column = Math.floor(Math.random() * columns);
+                        break;
+                    }
+                }
+                
+                if (!insertedKeyword) {
+                    // Random character for this position
+                    const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                    
+                    // Calculate brightness based on character's position
+                    const y = drops[i] * fontSize;
+                    if (y > 0) {
+                        // Leading character is brightest
+                        ctx.fillStyle = 'rgba(180, 255, 180, 0.9)';
+                        ctx.fillText(text, i * fontSize, y);
+                        
+                        // Fade to normal green for characters behind
+                        ctx.fillStyle = '#0F0';
+                        if (drops[i] > 1) {
+                            for (let j = 1; j < 10 && j < drops[i]; j++) {
+                                const fadeChar = chars.charAt(Math.floor(Math.random() * chars.length));
+                                const opacity = 1 - (j / 10);
+                                ctx.fillStyle = `rgba(0, 255, 0, ${opacity})`;
+                                ctx.fillText(fadeChar, i * fontSize, y - (j * fontSize));
+                            }
+                        }
+                    }
+                }
+                
+                // Reset drop to top when it reaches bottom
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.98) {
+                    drops[i] = 0;
+                }
+                
+                // Move drop down
+                drops[i]++;
+            }
+        }
 
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <h2 class="section-title" data-i18n="certifications.title">Certifications</h2>
-            <div class="cert-container">
-                <div class="cert-group">
-                    <h3 data-i18n="certifications.security.title">Security Certifications</h3>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.security.comptia">CompTIA
-                                Security+</span></li>
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.security.ceh">Certified
-                                Ethical Hacker (EC-Council)</span></li>
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.security.ms">Microsoft
-                                Certified: Security Operations Analyst</span></li>
-                    </ul>
-                </div>
-                <div class="cert-group">
-                    <h3 data-i18n="certifications.vendor.title">Vendor Certifications</h3>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-certificate"></i> <span
-                                data-i18n="certifications.vendor.s1paladin">SentinelOne Paladin</span></li>
-                        <li><i class="fas fa-certificate"></i> <span
-                                data-i18n="certifications.vendor.s1incident">SentinelOne Incident Responder</span></li>
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.vendor.keeper">Keeper
-                                Security Certification</span></li>
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.vendor.zscaler">Zscaler
-                                Certified Sales Engineer</span></li>
-                    </ul>
-                </div>
-                <div class="cert-group">
-                    <h3 data-i18n="certifications.network.title">Networking Certifications</h3>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.network.routing">Routing
-                                and Switching (Cisco)</span></li>
-                        <li><i class="fas fa-certificate"></i> <span data-i18n="certifications.network.scaling">Scaling
-                                Networks (Cisco)</span></li>
-                        <li><i class="fas fa-certificate"></i> <span
-                                data-i18n="certifications.network.connecting">Connecting Networks (Cisco)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Recalculate columns
+            const newColumns = Math.floor(canvas.width / fontSize);
+            
+            // Adjust drops array if needed
+            if (newColumns > columns) {
+                for (let i = columns; i < newColumns; i++) {
+                    drops[i] = Math.floor(Math.random() * -100);
+                }
+            }
+        });
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about.title">About Compyra</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="experience-badge" id="experienceBadge">
-                        <span id="yearsOfExperience">10+</span>
-                        <span data-i18n="about.years">Years of Experience</span>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p data-i18n="about.description1">Compyra provides expert IT security and consulting services to
-                        businesses of all sizes. With extensive experience in cybersecurity, penetration testing, and
-                        web development, we offer comprehensive solutions to protect your digital assets.</p>
-                    <p data-i18n="about.description2">Security isn't just a profession, it's our passion. We stay at the
-                        forefront of security trends and technologies to ensure our clients receive the most effective
-                        protection against evolving threats.</p>
-                    <p data-i18n="about.experience">Starting in 2014, we've built a reputation for excellence in the IT
-                        security industry, combining technical expertise with practical business solutions.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/rami-labidi-849944a8/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-text">
-                    <p data-i18n="contact.description">Ready to secure your business or need IT consulting? Get in touch
-                        with us today.</p>
-                </div>
-                <div class="contact-actions">
-                    <button id="contactButton" class="btn primary-btn">
-                        <i class="fas fa-envelope"></i>
-                        <span data-i18n="contact.button">Contact via Email</span>
-                    </button>
-                    <div class="email-copy">
-                        <span id="emailDisplay">contact@compyra.com</span>
-                        <button id="copyEmail" class="copy-btn">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                        <span id="copyNotification" class="copy-notification" data-i18n="contact.copied">Copied!</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>COMPYRA</h2>
-                    <p>compyra.com</p>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                        <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
-                        <li><a href="#about" data-i18n="nav.about">About</a></li>
-                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2025</span> Compyra. <span data-i18n="footer.rights">All Rights
-                        Reserved.</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="javascript.js"></script>
+        // Run the animation
+        setInterval(draw, 50);
+    </script>
 </body>
-
 </html>
