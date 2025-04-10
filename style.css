@@ -477,8 +477,9 @@ padding-top: 18px;
     right: -30px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--accent-color);
-    color: white;
+    /*background-color: var(--accent-color); */
+    background-color: var(--text-color);
+    color: var(--bg-color);
     padding: 20px;
     border-radius: 50%;
     width: 150px;
