@@ -509,6 +509,8 @@ padding-top: 18px;
 
 .social-links {
     margin-top: 30px;
+    display: flex;
+    gap: 15px;
 }
 
 .social-link {
@@ -516,7 +518,7 @@ padding-top: 18px;
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    background-color: #0077b5;
+    /*background-color: #0077b5; */
     color: white;
     border-radius: var(--border-radius);
     transition: var(--transition);
@@ -525,7 +527,22 @@ padding-top: 18px;
 .social-link:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
+    /*background-color: #005885;*/
+}
+.linkedin {
+    background-color: #0077b5;
+}
+
+.linkedin:hover {
     background-color: #005885;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+
+.facebook:hover {
+    background-color: #0d5dc1;
 }
 
 /* Contact Section */
