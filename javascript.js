@@ -603,3 +603,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             // Open WhatsApp in a new tab
             window.open(whatsappUrl, '_blank');
         });
+
+        // Google ads stuff
+        //toegevoegd in HTML onder de <HEAD> tag
