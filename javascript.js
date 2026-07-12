@@ -19,6 +19,7 @@ const TRANSLATIONS = {
         'nav.certifications': 'Certifications',
         'nav.about': 'About',
         'nav.contact': 'Contact',
+        'nav.support': 'Support',
 
         'hero.eyebrow': 'Cybersecurity · Consulting · Development',
         'hero.title': 'IT Security & Consulting',
@@ -82,6 +83,7 @@ const TRANSLATIONS = {
         'nav.certifications': 'Certificeringen',
         'nav.about': 'Over Ons',
         'nav.contact': 'Contact',
+        'nav.support': 'Ondersteuning',
 
         'hero.eyebrow': 'Cyberbeveiliging · Consultancy · Ontwikkeling',
         'hero.title': 'IT Beveiliging & Consultancy',
@@ -145,6 +147,7 @@ const TRANSLATIONS = {
         'nav.certifications': 'Certifications',
         'nav.about': 'À Propos',
         'nav.contact': 'Contact',
+        'nav.support': 'Assistance',
 
         'hero.eyebrow': 'Cybersécurité · Conseil · Développement',
         'hero.title': 'Sécurité & Conseil IT',

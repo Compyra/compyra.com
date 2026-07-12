@@ -1,640 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supportpage: Browser and Device Information</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px; /*New*/
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .info-section {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }/*new*/
-        .info {
-            margin-bottom: 10px;
-            padding: 5px;
-            border-bottom: 1px solid #eee;
-        }
-        h1 {
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #555;
-            margin-top: 25px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #555;
-            margin-top: 0; /* New */
-        }
-        .category {
-            margin-bottom: 30px;
-        }
-        .copy-btn {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 20px 0;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .copy-btn:hover {
-            background-color: #45a049;
-        }
-        .button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        } /* New */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        } /* New */
-        .teamviewer-link {
-            background-color: #0066CC;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-        } /* New */
-    </style>
+    <title>Browser & Device Information — Compyra Support</title>
+    <meta name="description" content="Check your browser, device and system information and copy it to share with Compyra support for faster troubleshooting.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <!-- Self-hosted fonts shared with the main site (nothing external) -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="header">
-        <h1>Browser and Device Information</h1>
-        <a href="https://download.teamviewer.com/download/TeamViewerQS_x64.exe" class="teamviewer-link">Download TeamViewer</a>
+    <!-- Inline SVG icon sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></symbol>
+        <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+        <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 9h6v6H9zM9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
+        <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></symbol>
+        <symbol id="i-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="16" height="8" rx="2"/><path d="M22 11v2"/></symbol>
+        <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5L5 21"/></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+        <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1M9 12l2 2 4-4"/></symbol>
+        <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+        <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    </svg>
+
+    <header>
+        <div class="container">
+            <a class="logo" href="https://compyra.com/" aria-label="Compyra — home">
+                <img src="/BL.svg" alt="" class="logo-light" width="42" height="42">
+                <img src="/WL.png" alt="" class="logo-dark" width="42" height="42">
+                <span class="brand">
+                    <span class="brand-name">COMPYRA</span>
+                    <span class="brand-tag">Support</span>
+                </span>
+            </a>
+            <div class="theme-toggle">
+                <button id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <a class="back-link" href="https://compyra.com/">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                    <span>Back to Compyra.com</span>
+                </a>
+                <span class="eyebrow">
+                    <svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg>
+                    Support Diagnostics
+                </span>
+                <h1>Browser &amp; Device Information</h1>
+                <p>Having an issue? Copy your browser, device and system details below and send them to our
+                    support team — it helps us troubleshoot faster. Nothing here is uploaded automatically.</p>
+                <div class="hero-actions">
+                    <button id="copyAll" class="btn btn-primary" type="button">
+                        <svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg>
+                        Copy all information
+                    </button>
+                    <button id="emailSupport" class="btn btn-ghost" type="button">
+                        <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                        Email to support
+                    </button>
+                    <button id="refreshBtn" class="btn btn-ghost" type="button">
+                        <svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg>
+                        Refresh
+                    </button>
+                    <a class="btn btn-ghost" href="https://download.teamviewer.com/download/TeamViewerQS_x64.exe" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                        TeamViewer (remote help)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="info-grid" id="infoGrid">
+                <!-- Populated by script.js -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Need a hand? Email <a href="mailto:support@compyra.com">support@compyra.com</a></p>
+            <p class="footer-note">Created by <a href="https://compyra.com">compyra.com</a> with love
+                · &copy; <span id="currentYear">2025</span> Compyra</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+        <span>Copied</span>
     </div>
-    
-    <div class="category">
-        <h2>Browser Information</h2>
-        <div class="info" id="userAgent"></div>
-        <div class="info" id="browserName"></div>
-        <div class="info" id="browserVersion"></div>
-        <div class="info" id="cookiesEnabled"></div>
-        <div class="info" id="language"></div>
-        <div class="info" id="languages"></div>
-        <!--<div class="info" id="doNotTrack"></div>-->
-    </div>
-    
-    <div class="category">
-        <h2>Device Information</h2>
-        <div class="info" id="operatingSystem"></div>
-        <div class="info" id="platform"></div>
-        <div class="info" id="cpuCores"></div>
-        <div class="info" id="deviceMemory"></div>
-        <div class="info" id="devicePixelRatio"></div>
-        <div class="info" id="touchSupport"></div>
-        <div class="info" id="vibrationSupport"></div>
-        <div class="info" id="batteryStatus"></div>
-    </div>
-    
-    <div class="category">
-        <h2>Network Information</h2>
-        <div class="info" id="effectiveType"></div>
-        <div class="info" id="downlink"></div>
-        <div class="info" id="rtt"></div>
-        <div class="info" id="onlineStatus"></div>
-    </div>
-    
-    <div class="category">
-        <h2>Display Information</h2>
-        <div class="info" id="screenResolution"></div>
-        <div class="info" id="availableResolution"></div>
-        <div class="info" id="colorDepth"></div>
-        <div class="info" id="viewportSize"></div>
-        <div class="info" id="deviceOrientation"></div>
-    </div>
-    
-    <div class="category">
-        <h2>Storage Information</h2>
-        <div class="info" id="localStorage"></div>
-        <div class="info" id="sessionStorage"></div>
-        <div class="info" id="indexedDB"></div>
-        <div class="info" id="webSQL"></div>
-        <div class="info" id="cacheAPI"></div>
-        <div class="info" id="storageQuota"></div>
-    </div>
-    
-    <div class="category">
-        <h2>Time and Location</h2>
-        <div class="info" id="currentTimeLocal"></div>
-        <div class="info" id="currentTimeUTC"></div>
-        <div class="info" id="timezone"></div>
-        <div class="info" id="timezoneOffset"></div>
-        <!--<div class="info" id="locationInfo"></div>-->
-        <p><strong>Location:</strong> <span id="location" class="info">Click the button to detect location</span></p>
-        <button id="locationButton" class="button">Get Location</button>
-    </div> 
-    <div class="category">
-        <h2>URL Information</h2>
-        <div class="info" id="currentURL"></div>
-        <div class="info" id="referrer"></div>
-        <div class="info" id="httpProtocol"></div>
-    </div>
-    
-    <div class="category">
-        <h2>API Support</h2>
-        <div class="info" id="geolocation"></div>
-        <div class="info" id="webWorkers"></div>
-        <div class="info" id="serviceWorkers"></div>
-        <div class="info" id="pushAPI"></div>
-        <div class="info" id="webRTC"></div>
-        <div class="info" id="bluetoothAPI"></div>
-        <div class="info" id="usbAPI"></div>
-        <div class="info" id="webXR"></div>
-        <div class="info" id="mediaCapabilities"></div>
-    </div>
-    
-    <div class="category">
-        <h2>Graphics and Media</h2>
-        <div class="info" id="webRTCSupport"></div>
-        <div class="info" id="webAudioSupport"></div>
-        <div class="info" id="webGLSupport"></div>
-        <div class="info" id="webGLRenderer"></div>
-        <div class="info" id="webGLVendor"></div>
-        <div class="info" id="canvasSupport"></div>
-    </div>
-    
-    <div class="category">
-        <h2>Fingerprinting Information</h2>
-        <div class="info" id="canvasFingerprint"></div>
-        <div class="info" id="webGLFingerprint"></div>
-        <div class="info" id="audioFingerprint"></div>
-        <div class="info" id="fontsFingerprint"></div>
-    </div>
-    
-    <button id="copyButton" class="copy-btn">Copy All Information</button>
-    <button id="sendEmailButton" class="button">Send Information to support@compyra.com</button>
 
-    <script>
-        function getBrowserInfo() {
-            const userAgent = navigator.userAgent;
-            const cookiesEnabled = navigator.cookieEnabled;
-            const language = navigator.language || "Unknown";
-            const languages = navigator.languages ? navigator.languages.join(", ") : "Unknown";
-            //const doNotTrack = navigator.doNotTrack || "Unknown, TODO still checking if it's possible to detect";
-
-            // Detecting browser name and version
-            let browserName = "Unknown";
-            let browserVersion = "Unknown";
-            
-            if (userAgent.indexOf("Firefox") > -1) {
-                browserName = "Mozilla Firefox";
-                const match = userAgent.match(/Firefox\/([0-9]+(?:\.[0-9]+)*)/);
-                browserVersion = match ? match[1] : "Unknown";
-            } else if (userAgent.indexOf("Edge") > -1 || userAgent.indexOf("Edg/") > -1) {
-                browserName = "Microsoft Edge";
-                const match = userAgent.match(/Edge\/([0-9]+(?:\.[0-9]+)*)/) || userAgent.match(/Edg\/([0-9]+(?:\.[0-9]+)*)/);
-                browserVersion = match ? match[1] : "Unknown";
-            } else if (userAgent.indexOf("Chrome") > -1) {
-                browserName = "Google Chrome";
-                const match = userAgent.match(/Chrome\/([0-9]+(?:\.[0-9]+)*)/);
-                browserVersion = match ? match[1] : "Unknown";
-            } else if (userAgent.indexOf("Safari") > -1) {
-                browserName = "Apple Safari";
-                const match = userAgent.match(/Version\/([0-9]+(?:\.[0-9]+)*)/);
-                browserVersion = match ? match[1] : "Unknown";
-            } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
-                browserName = "Microsoft Internet Explorer";
-                const match = userAgent.match(/(MSIE |rv:)([0-9]+(?:\.[0-9]+)*)/);
-                browserVersion = match ? match[2] : "Unknown";
-            }
-
-            // Detecting operating system and platform
-            const platform = navigator.platform || "Unknown";
-            let operatingSystem = "Unknown";
-            if (userAgent.indexOf("Win") > -1) {
-                operatingSystem = "Windows";
-            } else if (userAgent.indexOf("Mac") > -1) {
-                operatingSystem = "MacOS";
-            } else if (userAgent.indexOf("Linux") > -1) {
-                operatingSystem = "Linux";
-            } else if (userAgent.indexOf("Android") > -1) {
-                operatingSystem = "Android";
-            } else if (userAgent.indexOf("iPhone") > -1 || userAgent.indexOf("iPad") > -1 || userAgent.indexOf("iPod") > -1) {
-                operatingSystem = "iOS";
-            }
-
-            // Hardware info
-            const cpuCores = navigator.hardwareConcurrency || "Unknown";
-            const deviceMemory = navigator.deviceMemory || "Unknown";
-            const devicePixelRatio = window.devicePixelRatio || "Unknown";
-
-            // Feature detection
-            const touchSupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0) ? "Yes" : "No";
-            const vibrationSupport = 'vibrate' in navigator ? "Yes" : "No";
-
-            // Battery status - handling with promise and possible absence
-            if ('getBattery' in navigator) {
-                try {
-                    navigator.getBattery().then(battery => {
-                        const batteryStatus = `Charging: ${battery.charging}, Level: ${Math.round(battery.level * 100)}%`;
-                        document.getElementById("batteryStatus").textContent = `Battery Status: ${batteryStatus}`;
-                    }).catch(err => {
-                        document.getElementById("batteryStatus").textContent = `Battery Status: Not available (${err.message})`;
-                    });
-                } catch (e) {
-                    document.getElementById("batteryStatus").textContent = `Battery Status: API error`;
-                }
-            } else {
-                document.getElementById("batteryStatus").textContent = `Battery Status: API not supported`;
-            }
-
-            // Connection information with fallbacks
-            let effectiveType = "Unknown";
-            let downlink = "Unknown";
-            let rtt = "Unknown";
-            
-            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-            if (connection) {
-                effectiveType = connection.effectiveType || "Unknown";
-                downlink = connection.downlink || "Unknown";
-                rtt = connection.rtt || "Unknown";
-            }
-
-            // Online status
-            const onlineStatus = navigator.onLine ? "Online" : "Offline";
-
-            // Screen information
-            const screenResolution = `${screen.width} × ${screen.height}`;
-            const availableResolution = `${screen.availWidth} × ${screen.availHeight}`;
-            const colorDepth = screen.colorDepth || "Unknown";
-            const viewportSize = `${window.innerWidth} × ${window.innerHeight}`;
-            
-            // Device orientation with fallback
-            let deviceOrientation = "Unknown";
-            if (screen.orientation) {
-                deviceOrientation = screen.orientation.type || "Unknown";
-            }
-
-            // Storage support
-            const localStorageSupport = typeof localStorage !== 'undefined' ? "Yes" : "No";
-            const sessionStorageSupport = typeof sessionStorage !== 'undefined' ? "Yes" : "No";
-            const indexedDBSupport = typeof indexedDB !== 'undefined' ? "Yes" : "No";
-            const webSQLSupport = typeof window.openDatabase !== 'undefined' ? "Yes" : "No";
-            const cacheAPISupport = typeof caches !== 'undefined' ? "Yes" : "No";
-
-            // Storage quota with error handling
-            if (navigator.storage && navigator.storage.estimate) {
-                navigator.storage.estimate().then(estimate => {
-                    const usageMB = Math.round(estimate.usage / (1024 * 1024));
-                    const quotaMB = Math.round(estimate.quota / (1024 * 1024));
-                    const storageQuota = `Usage: ${usageMB} MB, Quota: ${quotaMB} MB`;
-                    document.getElementById("storageQuota").textContent = `Storage Quota: ${storageQuota}`;
-                }).catch(err => {
-                    document.getElementById("storageQuota").textContent = `Storage Quota: Error accessing (${err.message})`;
-                });
-            } else {
-                document.getElementById("storageQuota").textContent = `Storage Quota: API not supported`;
-            }
-
-            // Time and timezone
-            const currentTimeLocal = new Date().toLocaleString();
-            const currentTimeUTC = new Date().toUTCString();
-            let timezone = "Unknown";
-            try {
-                timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            } catch (e) {
-                timezone = "Error detecting timezone";
-            }
-            const timezoneOffset = new Date().getTimezoneOffset();
-
-            // URL information
-            const currentURL = window.location.href;
-            const referrer = document.referrer || "No referrer";
-            const httpProtocol = window.location.protocol;
-
-            // Feature detection
-            const geolocation = 'geolocation' in navigator ? "Yes" : "No";
-            const webWorkers = 'Worker' in window ? "Yes" : "No";
-            const serviceWorkers = 'serviceWorker' in navigator ? "Yes" : "No";
-            const pushAPI = 'PushManager' in window ? "Yes" : "No";
-            const webRTC = 'RTCPeerConnection' in window ? "Yes" : "No";
-            const bluetoothAPI = 'bluetooth' in navigator ? "Yes" : "No";
-            const usbAPI = 'usb' in navigator ? "Yes" : "No";
-            const webXR = 'xr' in navigator ? "Yes" : "No";
-            const mediaCapabilities = 'mediaCapabilities' in navigator ? "Yes" : "No";
-            const webRTCSupport = 'RTCPeerConnection' in window ? "Yes" : "No";
-            const webAudioSupport = 'AudioContext' in window || 'webkitAudioContext' in window ? "Yes" : "No";
-            const webGLSupport = 'WebGLRenderingContext' in window ? "Yes" : "No";
-            const canvasSupport = !!document.createElement('canvas').getContext ? "Yes" : "No";
-
-            // WebGL renderer and vendor with proper error handling
-            let webGLRenderer = "Unknown";
-            let webGLVendor = "Unknown";
-            
-            if (webGLSupport === "Yes") {
-                try {
-                    const canvas = document.createElement('canvas');
-                    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-                    if (gl) {
-                        const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-                        if (debugInfo) {
-                            webGLRenderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) || "Not available";
-                            webGLVendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) || "Not available";
-                        } else {
-                            webGLRenderer = "Debug info not available";
-                            webGLVendor = "Debug info not available";
-                        }
-                    }
-                } catch (e) {
-                    webGLRenderer = "Error accessing WebGL";
-                    webGLVendor = "Error accessing WebGL";
-                }
-            }
-
-            // Fingerprinting methods - now show actual values
-            let canvasFingerprint = "Not available";
-            let webGLFingerprint = "Not available";
-            let audioFingerprint = "Not available";
-            let fontsFingerprint = "Not available";
-
-            // Canvas fingerprint with error handling
-            if (canvasSupport === "Yes") {
-                try {
-                    const canvas = document.createElement('canvas');
-                    canvas.width = 200;
-                    canvas.height = 50;
-                    const ctx = canvas.getContext('2d');
-                    ctx.textBaseline = 'top';
-                    ctx.font = '14px Arial';
-                    ctx.fillStyle = '#f60';
-                    ctx.fillRect(125, 1, 62, 20);
-                    ctx.fillStyle = '#069';
-                    ctx.fillText('Browser Info', 2, 15);
-                    const dataURL = canvas.toDataURL();
-                    canvasFingerprint = dataURL.substring(0, 100) + "..."; // Showing partial dataURL
-                } catch (e) {
-                    canvasFingerprint = "Error generating: " + e.message;
-                }
-            }
-
-            // WebGL fingerprint with error handling
-            if (webGLSupport === "Yes") {
-                try {
-                    const canvas = document.createElement('canvas');
-                    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-                    if (gl) {
-                        const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-                        if (debugInfo) {
-                            const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
-                            const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-                            webGLFingerprint = vendor + " " + renderer;
-                        } else {
-                            webGLFingerprint = "Debug info not available";
-                        }
-                    }
-                } catch (e) {
-                    webGLFingerprint = "Error generating: " + e.message;
-                }
-            }
-
-            // Audio fingerprint with error handling - showing actual values now
-            if (webAudioSupport === "Yes") {
-                try {
-                    const AudioContext = window.AudioContext || window.webkitAudioContext;
-                    if (AudioContext) {
-                        const audioCtx = new AudioContext();
-                        const analyser = audioCtx.createAnalyser();
-                        analyser.fftSize = 256;
-                        
-                        const oscillator = audioCtx.createOscillator();
-                        oscillator.type = 'triangle';
-                        oscillator.frequency.setValueAtTime(500, audioCtx.currentTime);
-                        
-                        const compressor = audioCtx.createDynamicsCompressor();
-                        compressor.threshold.setValueAtTime(-50, audioCtx.currentTime);
-                        compressor.knee.setValueAtTime(40, audioCtx.currentTime);
-                        compressor.ratio.setValueAtTime(12, audioCtx.currentTime);
-                        compressor.attack.setValueAtTime(0, audioCtx.currentTime);
-                        compressor.release.setValueAtTime(0.25, audioCtx.currentTime);
-                        
-                        oscillator.connect(compressor);
-                        compressor.connect(analyser);
-                        
-                        const dataArray = new Uint8Array(analyser.frequencyBinCount);
-                        analyser.getByteFrequencyData(dataArray);
-                        
-                        // Show a sample of the frequency data
-                        const sample = dataArray.slice(0, 10);
-                        audioFingerprint = "Audio frequency sample: " + Array.from(sample).join(", ");
-                        
-                        // Clean up audio context
-                        if (audioCtx.state !== 'closed' && typeof audioCtx.close === 'function') {
-                            audioCtx.close();
-                        }
-                    }
-                } catch (e) {
-                    audioFingerprint = "Error generating: " + e.message;
-                }
-            }
-
-            // Fonts fingerprint (simplified approach)
-            try {
-                const testString = "mmmmmmmmmmlli";
-                const testSize = "72px";
-                const baseFonts = ["monospace", "sans-serif", "serif"];
-                const fontList = ["Arial", "Verdana", "Times New Roman", "Courier New", "Georgia"];
-                
-                const detectedFonts = fontList.filter(font => {
-                    for (let i = 0; i < baseFonts.length; i++) {
-                        const canvas = document.createElement("canvas");
-                        const ctx = canvas.getContext("2d");
-                        ctx.font = testSize + " " + baseFonts[i];
-                        const baselineSize = ctx.measureText(testString).width;
-                        
-                        ctx.font = testSize + " '" + font + "', " + baseFonts[i];
-                        const testSize = ctx.measureText(testString).width;
-                        
-                        if (baselineSize !== testSize) {
-                            return true;
-                        }
-                    }
-                    return false;
-                });
-                
-                fontsFingerprint = `Detected fonts (${detectedFonts.length}): ${detectedFonts.join(", ")}`;
-            } catch (e) {
-                fontsFingerprint = "Error detecting fonts: " + e.message;
-            }
-
-            // Geolocation functionality
-            // if (geolocation === "Yes") {
-            //     document.getElementById("locationInfo").textContent = "Location Information: Permission required (click to request)";
-            //     document.getElementById("locationInfo").style.cursor = "pointer";
-            //     document.getElementById("locationInfo").onclick = function() {
-            //         navigator.geolocation.getCurrentPosition(
-            //             position => {
-            //                 const { latitude, longitude } = position.coords;
-            //                 document.getElementById("locationInfo").textContent = `Location Information: Latitude: ${latitude.toFixed(4)}, Longitude: ${longitude.toFixed(4)}`;
-            //             },
-            //             error => {
-            //                 document.getElementById("locationInfo").textContent = `Location Information: Error: ${error.message}`;
-            //             }
-            //         );
-            //     };
-            // } else {
-            //     document.getElementById("locationInfo").textContent = "Location Information: API not supported";
-            // }
-            // location button technique
-            document.getElementById('locationButton').addEventListener('click', function() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    function(position) {
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
-                        document.getElementById('location').textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
-                    },
-                    function(error) {
-                        document.getElementById('location').textContent = `Error: ${error.message}`;
-                    }
-                );
-            } else {
-                document.getElementById('location').textContent = "Geolocation is not supported by this browser.";
-            }
-        });
-
-            // Update all fields in the DOM
-            document.getElementById("userAgent").textContent = `User Agent: ${userAgent}`;
-            document.getElementById("browserName").textContent = `Browser Name: ${browserName}`;
-            document.getElementById("browserVersion").textContent = `Browser Version: ${browserVersion}`;
-            document.getElementById("cookiesEnabled").textContent = `Cookies Enabled: ${cookiesEnabled}`;
-            document.getElementById("language").textContent = `Language: ${language}`;
-            document.getElementById("languages").textContent = `Languages: ${languages}`;
-            //document.getElementById("doNotTrack").textContent = `Do Not Track: ${doNotTrack}`;
-            document.getElementById("operatingSystem").textContent = `Operating System: ${operatingSystem}`;
-            document.getElementById("platform").textContent = `Platform: ${platform}`;
-            document.getElementById("cpuCores").textContent = `CPU Cores: ${cpuCores}`;
-            document.getElementById("deviceMemory").textContent = `Device Memory: ${deviceMemory !== "Unknown" ? deviceMemory + " GB" : "Unknown"}`;
-            document.getElementById("devicePixelRatio").textContent = `Device Pixel Ratio: ${devicePixelRatio}`;
-            document.getElementById("touchSupport").textContent = `Touch Support: ${touchSupport}`;
-            document.getElementById("vibrationSupport").textContent = `Vibration Support: ${vibrationSupport}`;
-            document.getElementById("effectiveType").textContent = `Effective Connection Type: ${effectiveType}`;
-            document.getElementById("downlink").textContent = `Downlink: ${downlink !== "Unknown" ? downlink + " Mbps" : "Unknown"}`;
-            document.getElementById("rtt").textContent = `RTT: ${rtt !== "Unknown" ? rtt + " ms" : "Unknown"}`;
-            document.getElementById("onlineStatus").textContent = `Online Status: ${onlineStatus}`;
-            document.getElementById("screenResolution").textContent = `Screen Resolution: ${screenResolution}`;
-            document.getElementById("availableResolution").textContent = `Available Resolution: ${availableResolution}`;
-            document.getElementById("colorDepth").textContent = `Color Depth: ${colorDepth !== "Unknown" ? colorDepth + " bits" : "Unknown"}`;
-            document.getElementById("viewportSize").textContent = `Viewport Size: ${viewportSize}`;
-            document.getElementById("deviceOrientation").textContent = `Device Orientation: ${deviceOrientation}`;
-            document.getElementById("localStorage").textContent = `Local Storage: ${localStorageSupport}`;
-            document.getElementById("sessionStorage").textContent = `Session Storage: ${sessionStorageSupport}`;
-            document.getElementById("indexedDB").textContent = `IndexedDB: ${indexedDBSupport}`;
-            document.getElementById("webSQL").textContent = `Web SQL: ${webSQLSupport}`;
-            document.getElementById("cacheAPI").textContent = `Cache API: ${cacheAPISupport}`;
-            document.getElementById("currentTimeLocal").textContent = `Current Time (Local): ${currentTimeLocal}`;
-            document.getElementById("currentTimeUTC").textContent = `Current Time (UTC): ${currentTimeUTC}`;
-            document.getElementById("timezone").textContent = `Timezone: ${timezone}`;
-            document.getElementById("timezoneOffset").textContent = `Timezone Offset: ${timezoneOffset} minutes`;
-            document.getElementById("currentURL").textContent = `Current URL: ${currentURL}`;
-            document.getElementById("referrer").textContent = `Referrer: ${referrer}`;
-            document.getElementById("httpProtocol").textContent = `HTTP Protocol: ${httpProtocol}`;
-            document.getElementById("geolocation").textContent = `Geolocation API: ${geolocation}`;
-            document.getElementById("webWorkers").textContent = `Web Workers: ${webWorkers}`;
-            document.getElementById("serviceWorkers").textContent = `Service Workers: ${serviceWorkers}`;
-            document.getElementById("pushAPI").textContent = `Push API: ${pushAPI}`;
-            document.getElementById("webRTC").textContent = `WebRTC: ${webRTC}`;
-            document.getElementById("bluetoothAPI").textContent = `Bluetooth API: ${bluetoothAPI}`;
-            document.getElementById("usbAPI").textContent = `USB API: ${usbAPI}`;
-            document.getElementById("webXR").textContent = `WebXR: ${webXR}`;
-            document.getElementById("mediaCapabilities").textContent = `Media Capabilities: ${mediaCapabilities}`;
-            document.getElementById("webRTCSupport").textContent = `WebRTC Support: ${webRTCSupport}`;
-            document.getElementById("webAudioSupport").textContent = `Web Audio Support: ${webAudioSupport}`;
-            document.getElementById("webGLSupport").textContent = `WebGL Support: ${webGLSupport}`;
-            document.getElementById("webGLRenderer").textContent = `WebGL Renderer: ${webGLRenderer}`;
-            document.getElementById("webGLVendor").textContent = `WebGL Vendor: ${webGLVendor}`;
-            document.getElementById("canvasSupport").textContent = `Canvas Support: ${canvasSupport}`;
-            document.getElementById("canvasFingerprint").textContent = `Canvas Fingerprint: ${canvasFingerprint}`;
-            document.getElementById("webGLFingerprint").textContent = `WebGL Fingerprint: ${webGLFingerprint}`;
-            document.getElementById("audioFingerprint").textContent = `Audio Fingerprint: ${audioFingerprint}`;
-            document.getElementById("fontsFingerprint").textContent = `Fonts Fingerprint: ${fontsFingerprint}`;
-        }
-
-        // Copy all information to clipboard
-        document.getElementById("copyButton").addEventListener("click", function() {
-            const infoElements = document.querySelectorAll(".info");
-            let allInfo = "BROWSER AND DEVICE INFORMATION\n\n";
-            
-            // Get all category headers
-            const categories = document.querySelectorAll(".category");
-            
-            categories.forEach(category => {
-                const categoryTitle = category.querySelector("h2").textContent;
-                allInfo += categoryTitle + "\n" + "=".repeat(categoryTitle.length) + "\n";
-                
-                const categoryInfoElements = category.querySelectorAll(".info");
-                categoryInfoElements.forEach(element => {
-                    if (element.textContent) {
-                        allInfo += element.textContent + "\n";
-                    }
-                });
-                
-                allInfo += "\n";
-            });
-            
-            // Create a temporary textarea element to copy the text
-            const textarea = document.createElement("textarea");
-            textarea.value = allInfo;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textarea);
-            
-            // Change button text temporarily for feedback
-            const originalText = this.textContent;
-            this.textContent = "Copied!";
-            setTimeout(() => {
-                this.textContent = originalText;
-            }, 2000);
-        });
-
-// Send email button functionality
-document.getElementById('sendEmailButton').addEventListener('click', function() {
-            // Gather all information
-            const browserInfo = document.querySelector('.info-section:nth-child(2)').innerText;
-            const screenInfo = document.querySelector('.info-section:nth-child(3)').innerText;
-            const networkInfo = document.querySelector('.info-section:nth-child(4)').innerText;
-            //const locationInfo = document.querySelector('.info-section:nth-child(5)').innerText; // replaced by location
-            const location = document.querySelector('.info-section:nth-child(5)').innerText;
-            const hardwareInfo = document.querySelector('.info-section:nth-child(6)').innerText;
-            
-            //const allInfo = `${browserInfo}\n\n${screenInfo}\n\n${networkInfo}\n\n${locationInfo}\n\n${hardwareInfo}`; //replaced by location
-            const allInfo = `${browserInfo}\n\n${screenInfo}\n\n${networkInfo}\n\n${location}\n\n${hardwareInfo}`;
-            
-            // Create email link
-            const emailSubject = "Browser and Device info";
-            const emailBody = encodeURIComponent(allInfo);
-            const emailLink = `mailto:support@compyra.com?subject=${emailSubject}&body=${emailBody}`;
-            
-            // Open email client
-            window.location.href = emailLink;
-        });
-
-        // Run the information collection when the page loads
-        window.addEventListener('load', getBrowserInfo);
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

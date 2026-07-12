@@ -11,7 +11,7 @@ src = (ROOT / "index.html").read_text(encoding="utf-8")
 NL = {
     "a11y.skip": "Ga naar hoofdinhoud",
     "nav.home": "Home", "nav.services": "Diensten", "nav.certifications": "Certificeringen",
-    "nav.about": "Over Ons", "nav.contact": "Contact",
+    "nav.about": "Over Ons", "nav.contact": "Contact", "nav.support": "Ondersteuning",
     "hero.eyebrow": "Cyberbeveiliging · Consultancy · Ontwikkeling",
     "hero.title": "IT Beveiliging & Consultancy",
     "hero.subtitle": "Professionele cyberbeveiligingsoplossingen voor bedrijven",
@@ -60,7 +60,7 @@ NL = {
 FR = {
     "a11y.skip": "Aller au contenu principal",
     "nav.home": "Accueil", "nav.services": "Services", "nav.certifications": "Certifications",
-    "nav.about": "À Propos", "nav.contact": "Contact",
+    "nav.about": "À Propos", "nav.contact": "Contact", "nav.support": "Assistance",
     "hero.eyebrow": "Cybersécurité · Conseil · Développement",
     "hero.title": "Sécurité & Conseil IT",
     "hero.subtitle": "Solutions professionnelles de cybersécurité pour les entreprises",

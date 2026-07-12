@@ -1,82 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy Company Information</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
-        .info {
-            margin-bottom: 10px;
-        }
-        .copy-button {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-        .copy-button:hover {
-            background-color: #0056b3;
-        }
-        .copy-all-button {
-            display: block;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .copy-all-button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <title>Company Information — Compyra</title>
+    <meta name="description" content="Official Compyra company and billing details — name, company, VAT/BTW number and contact. Copy what you need.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <!-- Self-hosted fonts shared with the main site (nothing external) -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h2>Company Information</h2>
-        <div class="info">
-            <p>Name: Rami Labidi <button class="copy-button" onclick="copyText('Rami Labidi')">Copy</button></p>
-            <p>Company Name: Compyra <button class="copy-button" onclick="copyText('Compyra')">Copy</button></p>
-            <p>BTW Number: BE1012255376 <button class="copy-button" onclick="copyText('BE1012255376')">Copy</button></p>
-            <p>Email: <a href="mailto:support@compyra.com" id="contact-email">support@compyra.com</a> <button class="copy-button" onclick="copyText('support@compyra.com')">Copy</button></p>
+    <!-- Inline SVG icon sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h.01M15 8h.01M9 12h.01M15 12h.01M9 16h6"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+        <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1M9 12l2 2 4-4"/></symbol>
+        <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    </svg>
+
+    <header>
+        <div class="container">
+            <a class="logo" href="https://compyra.com/" aria-label="Compyra — home">
+                <img src="/BL.svg" alt="" class="logo-light" width="42" height="42">
+                <img src="/WL.png" alt="" class="logo-dark" width="42" height="42">
+                <span class="brand">
+                    <span class="brand-name">COMPYRA</span>
+                    <span class="brand-tag">Company</span>
+                </span>
+            </a>
+            <div class="theme-toggle">
+                <button id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+                </button>
+            </div>
         </div>
-        <button class="copy-all-button" onclick="copyAll()">Copy All Information</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <a class="back-link" href="https://compyra.com/">
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+                    <span>Back to Compyra.com</span>
+                </a>
+                <span class="eyebrow">
+                    <svg class="icon" aria-hidden="true"><use href="#i-building"></use></svg>
+                    Company Details
+                </span>
+                <h1>Company Information</h1>
+                <p>Our official company and billing details. Need our VAT number or contact for an invoice or
+                    quote? Copy any field below, or grab everything at once.</p>
+                <div class="hero-actions">
+                    <button id="copyAll" class="btn btn-primary" type="button">
+                        <svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg>
+                        Copy all information
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="info-grid" id="infoGrid">
+                <!-- Populated by script.js -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Need a hand? Email <a href="mailto:support@compyra.com">support@compyra.com</a></p>
+            <p class="footer-note">Created at <a href="https://compyra.com/info">compyra.com/info</a>
+                · &copy; <span id="currentYear">2025</span> Compyra</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+        <span>Copied</span>
     </div>
 
-    <script>
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Copied: ' + text);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        }
-
-        function copyAll() {
-            const info = `Name: Rami Labidi\nCompany Name: Compyra\nBTW Nummer: BE1012255376\nEmail: support@compyra.com\nCopied from https://www.compyra.com/info`;
-            navigator.clipboard.writeText(info).then(() => {
-                alert('All company information copied to clipboard!');
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
