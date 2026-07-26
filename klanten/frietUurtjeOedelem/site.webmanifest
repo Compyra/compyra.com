@@ -1,0 +1,20 @@
+{
+  "name": "'t Friet-uurtje Oedelem",
+  "short_name": "Friet-uurtje",
+  "description": "Frituur in Oedelem (Beernem): dagverse frietjes zonder zout, huisgemaakte sauzen, snacks, verse burgers en Bicky's.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fff8ec",
+  "theme_color": "#c8102e",
+  "lang": "nl-BE",
+  "categories": ["food", "restaurant"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9F%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

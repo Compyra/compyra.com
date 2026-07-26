@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.depeerdeblomme.be/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.depeerdeblomme.be/media/gallery/peerdeblomme-19.jpg</image:loc>
+      <image:caption>Het zonnige terras van Bistro De Peerdeblomme in Assebroek</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.depeerdeblomme.be/media/gallery/peerdeblomme-02.jpg</image:loc>
+      <image:caption>De vernieuwde toog met tapkranen en verse tulpen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.depeerdeblomme.be/media/gallery/peerdeblomme-14.jpg</image:loc>
+      <image:caption>Een hammetje met frietjes, slaatje en sausjes</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.depeerdeblomme.be/privacy/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
