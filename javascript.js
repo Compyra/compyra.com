@@ -92,7 +92,7 @@ const TRANSLATIONS = {
         'hero.contact': 'Neem Contact Op',
 
         'services.title': 'Diensten',
-        'services.security.title': 'Beveiligingsconsultatie',
+        'services.security.title': 'Beveiligings- consultatie',
         'services.security.description': 'Uitgebreide beveiligingsbeoordeling en consultatie om uw bedrijfsmiddelen te beschermen.',
         'services.pentesting.title': 'Penetratietesten',
         'services.pentesting.description': 'Kwetsbaarheden in uw systemen identificeren voordat kwaadwillenden dat doen.',
