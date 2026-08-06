@@ -5,8 +5,21 @@
     <meta charset="UTF-8">
     <script>/* Humans -> single-page site in fr; crawlers keep this localized page for SEO. */
 (function(){var u=navigator.userAgent||'';if(/bot|crawl|spider|slurp|bingpreview|googlebot|facebookexternalhit|embedly|pinterest|vkshare|w3c_validator|lighthouse|headless/i.test(u))return;try{localStorage.setItem('preferredLanguage','fr');}catch(e){}location.replace('/?lang=fr');})();</script>
+    <!-- script-src hashes are recomputed by build_locales.py; rerun it after editing any inline script -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-LVUojHuUprQrL7hPnvOhOCxxbj4doP4VuPaVBBHYFaA=' 'sha256-BZEhSZp/41W5nPeSozfVcPphyadfyfoVGk2JjvO23OA=' 'sha256-+tiB7HiQK7IRaAAc/f2BgZ/DNcKls1S4y1aMDQdJJCY=' 'sha256-oo1pSwZtLTukQOSFoutsBESK0db9nJZr/qgzL6kZ9ac=' 'sha256-L3VM9JyWPtkaeiCMm1SOe82AQkqxp+TDmlqUsrQsuM4='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compyra - Sécurité &amp; Conseil IT</title>
+
+    <script>
+        // Scroll-reveal content is only hidden while the main script is alive.
+        document.documentElement.className += ' js';
+        setTimeout(function () {
+            if (!document.documentElement.hasAttribute('data-reveal-ready')) {
+                document.documentElement.classList.remove('js');
+            }
+        }, 3000);
+    </script>
 
     <link rel="stylesheet" href="/style.css">
 
@@ -72,7 +85,8 @@
       "email": "contact@compyra.com",
       "foundingDate": "2014",
       "sameAs": [
-        "http://www.linkedin.com/in/ramilabidi"
+        "https://www.linkedin.com/in/ramilabidi",
+        "https://play.google.com/store/apps/dev?id=4849332466549031771"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -113,15 +127,7 @@
       "mainEntity": {
         "@type": "WebSite",
         "name": "Compyra",
-        "url": "https://compyra.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://compyra.com/?s={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
+        "url": "https://compyra.com"
       },
       "openingHours": "Mo,Tu,We,Th,Fr 08:00-19:00"
     }
@@ -182,7 +188,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Inline SVG icon sprite (replaces Font Awesome CDN) -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
         <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
         <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 6V4M9 5L8 3M15 5l1-2M8 10H4M20 10h-4M8 14H3M21 14h-5M8 18l-2 2M16 18l2 2"/></symbol>
         <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
@@ -198,6 +204,7 @@
         <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
         <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.9 22 14.35V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H9z"/></symbol>
         <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></symbol>
+        <symbol id="i-googleplay" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.1c-.37.25-.6.68-.6 1.24v17.32c0 .56.23.99.6 1.24l9.4-9.9-9.4-9.9z"/><path d="M14.3 13.36l2.5 2.63-10.5 6.06c-.31.18-.6.24-.85.2l8.85-8.89z"/><path d="M14.3 10.64L5.45 1.75c.25-.04.54.02.85.2l10.5 6.06-2.5 2.63z"/><path d="M17.93 8.63l2.5 1.44c.9.52.9 1.34 0 1.86l-2.5 1.44L15.2 12l2.73-3.37z"/></symbol>
     </svg>
 
     <a href="#main" class="skip-link" data-i18n="a11y.skip">Aller au contenu principal</a>
@@ -218,15 +225,16 @@
                     <li><a href="#services" data-i18n="nav.services">Services</a></li>
                     <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
                     <li><a href="#about" data-i18n="nav.about">À Propos</a></li>
+                    <li><a href="#apps" data-i18n="nav.apps">Applications</a></li>
                     <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="header-controls">
                 <div class="language-selector" role="group" aria-label="Language">
-                    <button id="en" class="language-btn active" aria-pressed="true">EN</button>
-                    <button id="nl" class="language-btn" aria-pressed="false">NL</button>
-                    <button id="fr" class="language-btn" aria-pressed="false">FR</button>
+                    <button type="button" data-lang="en" class="language-btn" aria-pressed="false">EN</button>
+                    <button type="button" data-lang="nl" class="language-btn" aria-pressed="false">NL</button>
+                    <button type="button" data-lang="fr" class="language-btn active" aria-pressed="true">FR</button>
                 </div>
 
                 <div class="theme-toggle">
@@ -258,7 +266,6 @@
                     </div>
                 </div>
             </div>
-            <a href="#services" class="scroll-cue" aria-label="Scroll to services"><span></span></a>
         </section>
 
         <section id="services" class="services" aria-labelledby="services-title">
@@ -329,7 +336,7 @@
                     <div class="about-visual reveal">
                         <svg class="about-watermark" aria-hidden="true"><use href="#i-shield"></use></svg>
                         <div class="experience-badge" id="experienceBadge">
-                            <span id="yearsOfExperience" data-count-suffix="+">10+</span>
+                            <span id="yearsOfExperience" data-count-suffix="+">12+</span>
                             <span data-i18n="about.years">Années d'Expérience</span>
                         </div>
                     </div>
@@ -338,7 +345,7 @@
                         <p data-i18n="about.description2">La sécurité n'est pas seulement une profession, c'est notre passion. Nous restons à la pointe des tendances et technologies de sécurité pour garantir à nos clients la protection la plus efficace contre les menaces évolutives.</p>
                         <p data-i18n="about.experience">Depuis 2014, nous avons bâti une réputation d'excellence dans l'industrie de la sécurité informatique, combinant expertise technique et solutions commerciales pratiques.</p>
                         <div class="social-links">
-                            <a href="http://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener" class="social-link linkedin">
+                            <a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener" class="social-link linkedin">
                                 <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span>
                             </a>
                             <a href="https://www.facebook.com/compyra" target="_blank" rel="noopener" class="social-link facebook">
@@ -357,12 +364,29 @@
             </div>
         </section>
 
+        <section id="apps" class="apps" aria-labelledby="apps-title">
+            <div class="container">
+                <h2 id="apps-title" class="section-title reveal" data-i18n="apps.title">Applications</h2>
+                <div class="apps-panel reveal">
+                    <div class="apps-copy">
+                        <h3 data-i18n="apps.heading">Applications Android sur Google Play</h3>
+                        <p data-i18n="apps.description">En plus des missions clients, je conçois et publie mes propres applications Android. Découvrez la collection complète sur ma page développeur Google Play.</p>
+                        <p class="apps-note" data-i18n="apps.note">Développeur : Rami Labidi</p>
+                    </div>
+                    <a class="apps-cta" href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#i-googleplay"></use></svg>
+                        <span data-i18n="apps.cta">Voir mes applications sur Google Play</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container">
                 <h2 id="contact-title" class="section-title reveal" data-i18n="contact.title">Contactez-nous</h2>
                 <div class="contact-content reveal">
                     <div class="contact-text">
-                        <p data-i18n="contact.description">Prêt à sécuriser votre entreprise ou besoin de conseil informatique? Contactez-nous dès aujourd'hui.</p>
+                        <p data-i18n="contact.description">Prêt à sécuriser votre entreprise ou besoin de conseil informatique ? Contactez-nous dès aujourd'hui.</p>
                     </div>
                     <div class="contact-actions">
                         <button id="contactButton" class="btn primary-btn">
@@ -374,7 +398,7 @@
                             <button id="copyEmail" class="copy-btn" aria-label="Copy email address">
                                 <svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg>
                             </button>
-                            <span id="copyNotification" class="copy-notification" role="status" data-i18n="contact.copied">Copié!</span>
+                            <span id="copyNotification" class="copy-notification" role="status" data-i18n="contact.copied">Copié !</span>
                         </div>
                     </div>
 
@@ -424,13 +448,14 @@
                         <li><a href="#services" data-i18n="nav.services">Services</a></li>
                         <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
                         <li><a href="#about" data-i18n="nav.about">À Propos</a></li>
+                        <li><a href="#apps" data-i18n="nav.apps">Applications</a></li>
                         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                         <li><a href="/support/" data-i18n="nav.support">Assistance</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2025</span> Compyra. <span data-i18n="footer.rights">Tous Droits Réservés.</span></p>
+                <p>&copy; <span id="currentYear">2026</span> Compyra. <span data-i18n="footer.rights">Tous Droits Réservés.</span></p>
             </div>
         </div>
     </footer>

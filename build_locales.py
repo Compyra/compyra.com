@@ -1,17 +1,68 @@
-"""One-off generator for /nl/ and /fr/ localized pages from the English index.html.
+"""Generator for /nl/ and /fr/ localized pages from the English index.html.
 Produces static, crawler-visible localized HTML with correct canonical/hreflang/locale.
+Also refreshes the CSP inline-code hashes of index.html and 404.html in place,
+so rerun this script after editing any inline <script> or <style>.
 """
+import base64
+import hashlib
 import re
 import html
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+
+
+def _hashes(snippets):
+    """CSP sha256 sources for inline code. The repo stores LF but Windows worktrees
+    are CRLF, so hash both forms: production serves LF, local previews serve CRLF."""
+    out = []
+    for text in snippets:
+        for variant in {text, text.replace("\r\n", "\n")}:
+            h = base64.b64encode(hashlib.sha256(variant.encode("utf-8")).digest()).decode()
+            src_ = f"'sha256-{h}'"
+            if src_ not in out:
+                out.append(src_)
+    return out
+
+
+def refresh_csp(page):
+    """Rewrite the script-src/style-src hash lists in the page's CSP meta tag.
+    Only plain <script>/<style> count: src= scripts and JSON-LD are not executed inline."""
+    m = re.search(r'(<meta http-equiv="Content-Security-Policy" content=")([^"]*)(")', page)
+    if not m:
+        return page
+    policy = m.group(2)
+    live = re.sub(r"<!--.*?-->", "", page, flags=re.S)
+    scripts = re.findall(r"<script>(.*?)</script>", live, re.S)
+    styles = re.findall(r"<style>(.*?)</style>", live, re.S)
+    policy = re.sub(r"script-src [^;]*",
+                    " ".join(["script-src 'self'"] + _hashes(scripts)), policy)
+    policy = re.sub(r"style-src [^;]*",
+                    " ".join(["style-src 'self'"] + _hashes(styles)), policy)
+    return page[:m.start(2)] + policy + page[m.end(2):]
+
+
+def refresh_csp_file(name):
+    path = ROOT / name
+    with path.open(encoding="utf-8", newline="") as f:
+        text = f.read()
+    new = refresh_csp(text)
+    if new != text:
+        with path.open("w", encoding="utf-8", newline="") as f:
+            f.write(new)
+        print("csp refreshed", name)
+
+
+refresh_csp_file("index.html")
+refresh_csp_file("404.html")
+
 src = (ROOT / "index.html").read_text(encoding="utf-8")
 
 NL = {
     "a11y.skip": "Ga naar hoofdinhoud",
     "nav.home": "Home", "nav.services": "Diensten", "nav.certifications": "Certificeringen",
     "nav.about": "Over Ons", "nav.contact": "Contact", "nav.support": "Ondersteuning",
+    "nav.apps": "Apps",
     "hero.eyebrow": "Cyberbeveiliging · Consultancy · Ontwikkeling",
     "hero.title": "IT Beveiliging & Consultancy",
     "hero.subtitle": "Professionele cyberbeveiligingsoplossingen voor bedrijven",
@@ -41,11 +92,16 @@ NL = {
     "certifications.network.connecting": "Connecting Networks (Cisco)",
     "about.title": "Over Compyra",
     "about.years": "Jaren Ervaring",
-    "about.description1": "Compyra biedt expert IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij uitgebreide oplossingen om uw digitale activa te beschermen.",
+    "about.description1": "Compyra biedt deskundige IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij complete oplossingen om uw digitale activa te beschermen.",
     "about.description2": "Beveiliging is niet alleen een beroep, het is onze passie. We blijven voorop lopen in beveiligingstrends en -technologieën om ervoor te zorgen dat onze klanten de meest effectieve bescherming krijgen tegen evoluerende bedreigingen.",
     "about.experience": "Sinds 2014 hebben we een reputatie opgebouwd voor uitmuntendheid in de IT-beveiligingsindustrie, door technische expertise te combineren met praktische bedrijfsoplossingen.",
     "about.projects.title": "Benieuwd wat ik bouw?",
     "about.projects.desc": "Ontdek mijn persoonlijke projecten op labidi.eu.",
+    "apps.title": "Apps",
+    "apps.heading": "Android-apps op Google Play",
+    "apps.description": "Naast klantenwerk ontwerp en publiceer ik ook mijn eigen Android-apps. Bekijk de volledige collectie op mijn Google Play-ontwikkelaarspagina.",
+    "apps.note": "Ontwikkelaar: Rami Labidi",
+    "apps.cta": "Bekijk mijn apps op Google Play",
     "contact.title": "Neem Contact Op",
     "contact.description": "Klaar om uw bedrijf te beveiligen of heeft u IT-consultancy nodig? Neem vandaag nog contact met ons op.",
     "contact.button": "Contact via E-mail",
@@ -61,6 +117,7 @@ FR = {
     "a11y.skip": "Aller au contenu principal",
     "nav.home": "Accueil", "nav.services": "Services", "nav.certifications": "Certifications",
     "nav.about": "À Propos", "nav.contact": "Contact", "nav.support": "Assistance",
+    "nav.apps": "Applications",
     "hero.eyebrow": "Cybersécurité · Conseil · Développement",
     "hero.title": "Sécurité & Conseil IT",
     "hero.subtitle": "Solutions professionnelles de cybersécurité pour les entreprises",
@@ -95,10 +152,15 @@ FR = {
     "about.experience": "Depuis 2014, nous avons bâti une réputation d'excellence dans l'industrie de la sécurité informatique, combinant expertise technique et solutions commerciales pratiques.",
     "about.projects.title": "Curieux de voir mes projets ?",
     "about.projects.desc": "Découvrez mes projets personnels sur labidi.eu.",
+    "apps.title": "Applications",
+    "apps.heading": "Applications Android sur Google Play",
+    "apps.description": "En plus des missions clients, je conçois et publie mes propres applications Android. Découvrez la collection complète sur ma page développeur Google Play.",
+    "apps.note": "Développeur : Rami Labidi",
+    "apps.cta": "Voir mes applications sur Google Play",
     "contact.title": "Contactez-nous",
-    "contact.description": "Prêt à sécuriser votre entreprise ou besoin de conseil informatique? Contactez-nous dès aujourd'hui.",
+    "contact.description": "Prêt à sécuriser votre entreprise ou besoin de conseil informatique ? Contactez-nous dès aujourd'hui.",
     "contact.button": "Contact par Email",
-    "contact.copied": "Copié!",
+    "contact.copied": "Copié !",
     "contact.form.title": "Contactez-moi sur WhatsApp",
     "contact.form.name": "Nom", "contact.form.email": "Email", "contact.form.message": "Message",
     "contact.form.send": "Envoyer",
@@ -190,9 +252,17 @@ def build(lang, tr, meta):
     out = out.replace('<meta charset="UTF-8">',
                       '<meta charset="UTF-8">\n    ' + redirect, 1)
 
+    # 9) Mark this locale as the active language button in the static markup
+    out = out.replace('data-lang="en" class="language-btn active" aria-pressed="true"',
+                      'data-lang="en" class="language-btn" aria-pressed="false"', 1)
+    out = out.replace(f'data-lang="{meta["lang"]}" class="language-btn" aria-pressed="false"',
+                      f'data-lang="{meta["lang"]}" class="language-btn active" aria-pressed="true"', 1)
+
     target = ROOT / meta["lang"] / "index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(out, encoding="utf-8")
+    # Hash the bytes actually on disk (write_text may have converted line endings).
+    refresh_csp_file(f"{meta['lang']}/index.html")
     return target
 
 

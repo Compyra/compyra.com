@@ -8,6 +8,12 @@
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// localStorage throws in private mode / when storage is blocked; never let that abort init.
+const store = {
+    get(key) { try { return localStorage.getItem(key); } catch (e) { return null; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* ignored */ } }
+};
+
 /* --------------------------------------------------------------------------
    Translations (hoisted once, not rebuilt per call)
    -------------------------------------------------------------------------- */
@@ -20,6 +26,7 @@ const TRANSLATIONS = {
         'nav.about': 'About',
         'nav.contact': 'Contact',
         'nav.support': 'Support',
+        'nav.apps': 'Apps',
 
         'hero.eyebrow': 'Cybersecurity · Consulting · Development',
         'hero.title': 'IT Security & Consulting',
@@ -60,6 +67,12 @@ const TRANSLATIONS = {
         'about.projects.title': 'Curious what I build?',
         'about.projects.desc': 'Explore my personal side projects on labidi.eu.',
 
+        'apps.title': 'Apps',
+        'apps.heading': 'Android apps on Google Play',
+        'apps.description': 'Alongside client work, I design and publish my own Android apps. Browse the full collection on my Google Play developer page.',
+        'apps.note': 'Developer: Rami Labidi',
+        'apps.cta': 'View my apps on Google Play',
+
         'contact.title': 'Contact Us',
         'contact.description': 'Ready to secure your business or need IT consulting? Get in touch with us today.',
         'contact.button': 'Contact via Email',
@@ -84,6 +97,7 @@ const TRANSLATIONS = {
         'nav.about': 'Over Ons',
         'nav.contact': 'Contact',
         'nav.support': 'Ondersteuning',
+        'nav.apps': 'Apps',
 
         'hero.eyebrow': 'Cyberbeveiliging · Consultancy · Ontwikkeling',
         'hero.title': 'IT Beveiliging & Consultancy',
@@ -92,7 +106,7 @@ const TRANSLATIONS = {
         'hero.contact': 'Neem Contact Op',
 
         'services.title': 'Diensten',
-        'services.security.title': 'Beveiligings- consultatie',
+        'services.security.title': 'Beveiligingsconsultatie',
         'services.security.description': 'Uitgebreide beveiligingsbeoordeling en consultatie om uw bedrijfsmiddelen te beschermen.',
         'services.pentesting.title': 'Penetratietesten',
         'services.pentesting.description': 'Kwetsbaarheden in uw systemen identificeren voordat kwaadwillenden dat doen.',
@@ -118,11 +132,17 @@ const TRANSLATIONS = {
 
         'about.title': 'Over Compyra',
         'about.years': 'Jaren Ervaring',
-        'about.description1': 'Compyra biedt expert IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij uitgebreide oplossingen om uw digitale activa te beschermen.',
+        'about.description1': 'Compyra biedt deskundige IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij complete oplossingen om uw digitale activa te beschermen.',
         'about.description2': 'Beveiliging is niet alleen een beroep, het is onze passie. We blijven voorop lopen in beveiligingstrends en -technologieën om ervoor te zorgen dat onze klanten de meest effectieve bescherming krijgen tegen evoluerende bedreigingen.',
         'about.experience': 'Sinds 2014 hebben we een reputatie opgebouwd voor uitmuntendheid in de IT-beveiligingsindustrie, door technische expertise te combineren met praktische bedrijfsoplossingen.',
         'about.projects.title': 'Benieuwd wat ik bouw?',
         'about.projects.desc': 'Ontdek mijn persoonlijke projecten op labidi.eu.',
+
+        'apps.title': 'Apps',
+        'apps.heading': 'Android-apps op Google Play',
+        'apps.description': 'Naast klantenwerk ontwerp en publiceer ik ook mijn eigen Android-apps. Bekijk de volledige collectie op mijn Google Play-ontwikkelaarspagina.',
+        'apps.note': 'Ontwikkelaar: Rami Labidi',
+        'apps.cta': 'Bekijk mijn apps op Google Play',
 
         'contact.title': 'Neem Contact Op',
         'contact.description': 'Klaar om uw bedrijf te beveiligen of heeft u IT-consultancy nodig? Neem vandaag nog contact met ons op.',
@@ -148,6 +168,7 @@ const TRANSLATIONS = {
         'nav.about': 'À Propos',
         'nav.contact': 'Contact',
         'nav.support': 'Assistance',
+        'nav.apps': 'Applications',
 
         'hero.eyebrow': 'Cybersécurité · Conseil · Développement',
         'hero.title': 'Sécurité & Conseil IT',
@@ -185,13 +206,17 @@ const TRANSLATIONS = {
         'about.description1': "Compyra fournit des services d'experts en sécurité informatique et en conseil aux entreprises de toutes tailles. Avec une vaste expérience en cybersécurité, tests de pénétration et développement web, nous offrons des solutions complètes pour protéger vos actifs numériques.",
         'about.description2': "La sécurité n'est pas seulement une profession, c'est notre passion. Nous restons à la pointe des tendances et technologies de sécurité pour garantir à nos clients la protection la plus efficace contre les menaces évolutives.",
         'about.experience': "Depuis 2014, nous avons bâti une réputation d'excellence dans l'industrie de la sécurité informatique, combinant expertise technique et solutions commerciales pratiques.",
-        'about.projects.title': 'Curieux de voir mes projets ?',
+        'about.projects.title': 'Curieux de voir mes projets ?',
         'about.projects.desc': 'Découvrez mes projets personnels sur labidi.eu.',
-
+        'apps.title': 'Applications',
+        'apps.heading': 'Applications Android sur Google Play',
+        'apps.description': "En plus des missions clients, je conçois et publie mes propres applications Android. Découvrez la collection complète sur ma page développeur Google Play.",
+        'apps.note': 'Développeur : Rami Labidi',
+        'apps.cta': 'Voir mes applications sur Google Play',
         'contact.title': 'Contactez-nous',
-        'contact.description': 'Prêt à sécuriser votre entreprise ou besoin de conseil informatique? Contactez-nous dès aujourd\'hui.',
+        'contact.description': 'Prêt à sécuriser votre entreprise ou besoin de conseil informatique ? Contactez-nous dès aujourd\'hui.',
         'contact.button': 'Contact par Email',
-        'contact.copied': 'Copié!',
+        'contact.copied': 'Copié !',
         'contact.form.title': 'Contactez-moi sur WhatsApp',
         'contact.form.name': 'Nom',
         'contact.form.email': 'Email',
@@ -230,12 +255,12 @@ function applyLanguage(lang) {
 
     // Reflect active state on all language buttons
     document.querySelectorAll('.language-btn').forEach(btn => {
-        const isActive = btn.id === lang;
+        const isActive = btn.dataset.lang === lang;
         btn.classList.toggle('active', isActive);
         btn.setAttribute('aria-pressed', String(isActive));
     });
 
-    localStorage.setItem('preferredLanguage', lang);
+    store.set('preferredLanguage', lang);
     document.documentElement.lang = lang;
 
     typeHeroSubtitle(t('hero.subtitle'));
@@ -247,7 +272,7 @@ function determineLanguage() {
         const params = new URLSearchParams(location.search);
         const q = params.get('lang');
         if (q && TRANSLATIONS[q]) {
-            try { localStorage.setItem('preferredLanguage', q); } catch (e) {}
+            store.set('preferredLanguage', q);
             if (history.replaceState) {
                 history.replaceState(null, '', location.pathname + location.hash);
             }
@@ -260,7 +285,7 @@ function determineLanguage() {
         return window.COMPYRA_LOCALE;
     }
 
-    const saved = localStorage.getItem('preferredLanguage');
+    const saved = store.get('preferredLanguage');
     if (saved && TRANSLATIONS[saved]) return saved;
 
     const browserLang = (navigator.language || 'en').toLowerCase();
@@ -273,7 +298,7 @@ function setupLanguageButtons() {
     document.addEventListener('click', e => {
         const btn = e.target.closest('.language-btn');
         if (!btn) return;
-        applyLanguage(btn.id);
+        applyLanguage(btn.dataset.lang);
     });
 }
 
@@ -324,7 +349,7 @@ function setupTheme() {
     function setTheme(theme) {
         const isDark = theme === 'dark';
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        store.set('theme', theme);
 
         if (themeToggle) {
             themeToggle.innerHTML = iconMarkup(isDark);
@@ -341,7 +366,7 @@ function setupTheme() {
     }
 
     function determineTheme() {
-        const saved = localStorage.getItem('theme');
+        const saved = store.get('theme');
         if (saved) return saved;
         const hour = new Date().getHours();
         if (hour >= 20 || hour < 7 || prefersDark.matches) return 'dark';
@@ -362,7 +387,7 @@ function setupTheme() {
     });
 
     prefersDark.addEventListener('change', e => {
-        if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+        if (!store.get('theme')) setTheme(e.matches ? 'dark' : 'light');
     });
 }
 
@@ -386,12 +411,13 @@ function setupMobileMenu() {
                 <li><a href="#services" data-i18n="nav.services">Services</a></li>
                 <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#apps" data-i18n="nav.apps">Apps</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="mobile-language-selector" role="group" aria-label="Language">
-                <button id="en" class="language-btn">EN</button>
-                <button id="nl" class="language-btn">NL</button>
-                <button id="fr" class="language-btn">FR</button>
+                <button type="button" data-lang="en" class="language-btn">EN</button>
+                <button type="button" data-lang="nl" class="language-btn">NL</button>
+                <button type="button" data-lang="fr" class="language-btn">FR</button>
             </div>
             <div class="mobile-theme-toggle">
                 <button id="mobileThemeToggle" aria-label="Toggle dark mode">
@@ -574,6 +600,7 @@ function setupStickyHeader() {
    -------------------------------------------------------------------------- */
 function setupScrollReveal() {
     const items = document.querySelectorAll('.reveal');
+    document.documentElement.setAttribute('data-reveal-ready', '');
     if (!items.length) return;
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {

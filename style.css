@@ -89,6 +89,11 @@ ul {
     list-style: none;
 }
 
+/* Inline SVG symbol sprite (kept out of layout without a style attribute, for CSP) */
+.sprite {
+    display: none;
+}
+
 .icon {
     width: 1em;
     height: 1em;
@@ -222,6 +227,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: clamp(16px, 2vw, 40px);
     padding: 16px 15px;
     transition: padding 0.3s ease;
 }
@@ -234,6 +240,7 @@ header.scrolled .container {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex: 0 0 auto;
 }
 
 .logo a {
@@ -273,7 +280,8 @@ header.scrolled .logo-img {
 
 nav ul {
     display: flex;
-    gap: 32px;
+    flex-wrap: nowrap;
+    gap: clamp(18px, 2vw, 32px);
 }
 
 nav ul li a {
@@ -282,6 +290,7 @@ nav ul li a {
     color: var(--text-color);
     position: relative;
     padding: 5px 0;
+    white-space: nowrap;
 }
 
 nav ul li a::after {
@@ -309,6 +318,7 @@ nav ul li a[aria-current="true"] {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex: 0 0 auto;
 }
 
 .language-selector {
@@ -368,6 +378,7 @@ nav ul li a[aria-current="true"] {
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     text-align: center;
@@ -469,30 +480,6 @@ nav ul li a[aria-current="true"] {
 .cta-buttons .secondary-btn:hover {
     background-color: #fff;
     color: #0f1115;
-}
-
-.scroll-cue {
-    position: absolute;
-    bottom: 26px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 26px;
-    height: 42px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 14px;
-    z-index: 2;
-}
-
-.scroll-cue span {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    width: 4px;
-    height: 8px;
-    margin-left: -2px;
-    border-radius: 2px;
-    background: var(--accent-bright);
-    animation: scrollCue 1.8s ease-in-out infinite;
 }
 
 /* Services ----------------------------------------------------------------- */
@@ -787,6 +774,71 @@ nav ul li a[aria-current="true"] {
 
 .projects-link:hover > .icon {
     transform: translateX(5px);
+}
+
+/* Apps on Google Play ------------------------------------------------------ */
+.apps {
+    background-color: var(--bg-alt);
+}
+
+.apps-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) auto;
+    gap: 44px;
+    align-items: center;
+    padding: 46px 50px;
+    border-radius: var(--border-radius);
+    color: #eef2f7;
+    background:
+        radial-gradient(700px 420px at 12% 0%, rgba(46, 230, 182, 0.22), transparent 62%),
+        linear-gradient(160deg, #12202b, #0f1115);
+    box-shadow: var(--shadow-lg);
+}
+
+.apps-panel h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.apps-panel p {
+    font-size: 1.05rem;
+    color: #b9c4d1;
+    max-width: 54ch;
+}
+
+.apps-note {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.apps-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 17px 30px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+    color: #05231a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 14px 34px var(--accent-glow);
+    transition: var(--transition);
+}
+
+.apps-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 46px var(--accent-glow);
+}
+
+.apps-cta .icon {
+    font-size: 1.55rem;
 }
 
 /* Contact ------------------------------------------------------------------ */
@@ -1114,14 +1166,14 @@ footer {
 }
 
 /* Scroll-reveal ------------------------------------------------------------ */
-.reveal {
+html.js .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
 }
 
-.reveal.visible {
+html.js .reveal.visible {
     opacity: 1;
     transform: none;
 }
@@ -1143,16 +1195,40 @@ footer {
     50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
 
-@keyframes scrollCue {
-    0% { top: 8px; opacity: 1; }
-    100% { top: 24px; opacity: 0; }
-}
-
 @keyframes caret {
     50% { opacity: 0; }
 }
 
 /* Responsive --------------------------------------------------------------- */
+/* Tighten the header before the longest locale (FR) can crowd the controls. */
+@media (max-width: 1280px) {
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    nav ul li a {
+        font-size: 0.95rem;
+    }
+
+    .header-controls .language-btn {
+        padding: 5px 9px;
+    }
+}
+
+/* Below this the inline nav no longer fits alongside the language/theme
+   controls in every locale, so everything moves into the mobile menu. */
+@media (max-width: 1150px) {
+    header nav,
+    .header-controls .language-selector,
+    .header-controls .theme-toggle {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: inline-flex;
+    }
+}
+
 @media (max-width: 992px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -1169,19 +1245,15 @@ footer {
         top: auto;
         transform: none;
     }
+
+    .apps-panel {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        justify-items: start;
+    }
 }
 
 @media (max-width: 768px) {
-    header nav,
-    .header-controls .language-selector,
-    .header-controls .theme-toggle {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: inline-flex;
-    }
-
     section {
         padding: 70px 0;
     }
@@ -1205,6 +1277,14 @@ footer {
     .cert-group,
     .contact-form {
         padding: 24px;
+    }
+
+    .apps-panel {
+        padding: 30px 24px;
+    }
+
+    .apps-cta {
+        width: 100%;
     }
 
     .experience-badge {
@@ -1239,14 +1319,13 @@ footer {
         transition-duration: 0.001ms !important;
     }
 
-    .reveal {
+    html.js .reveal {
         opacity: 1;
         transform: none;
     }
 
     .hero-grid,
-    .hero-glow,
-    .scroll-cue span {
+    .hero-glow {
         animation: none;
     }
 }

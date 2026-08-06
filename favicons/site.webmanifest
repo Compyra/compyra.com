@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Compyra - IT Security & Consulting",
+    "short_name": "Compyra",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/favicons/android-chrome-192x192.png",
@@ -13,7 +15,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#f8f9fa",
+    "background_color": "#f8f9fa",
     "display": "standalone"
 }
