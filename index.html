@@ -3,21 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- script-src hashes are recomputed by build_locales.py; rerun it after editing any inline script -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-+tiB7HiQK7IRaAAc/f2BgZ/DNcKls1S4y1aMDQdJJCY=' 'sha256-oo1pSwZtLTukQOSFoutsBESK0db9nJZr/qgzL6kZ9ac='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compyra - IT Security & Consulting</title>
-
-    <script>
-        // Scroll-reveal content is only hidden while the main script is alive.
-        document.documentElement.className += ' js';
-        setTimeout(function () {
-            if (!document.documentElement.hasAttribute('data-reveal-ready')) {
-                document.documentElement.classList.remove('js');
-            }
-        }, 3000);
-    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -83,7 +70,7 @@
       "email": "contact@compyra.com",
       "foundingDate": "2014",
       "sameAs": [
-        "https://www.linkedin.com/in/ramilabidi",
+        "http://www.linkedin.com/in/ramilabidi",
         "https://play.google.com/store/apps/dev?id=4849332466549031771"
       ],
       "contactPoint": {
@@ -125,7 +112,15 @@
       "mainEntity": {
         "@type": "WebSite",
         "name": "Compyra",
-        "url": "https://compyra.com"
+        "url": "https://compyra.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://compyra.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       },
       "openingHours": "Mo,Tu,We,Th,Fr 08:00-19:00"
     }
@@ -155,6 +150,26 @@
     }
     </script>
 
+    <!-- Analytics disabled (commented out) until a GDPR consent gate is added. -->
+    <!-- Google Tag Manager -->
+    <!--
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5S43JM6K');</script>
+    -->
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17545118715"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17545118715');
+    </script>
+    -->
 </head>
 
 <body>
@@ -166,7 +181,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Inline SVG icon sprite (replaces Font Awesome CDN) -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
         <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
         <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 6V4M9 5L8 3M15 5l1-2M8 10H4M20 10h-4M8 14H3M21 14h-5M8 18l-2 2M16 18l2 2"/></symbol>
         <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
@@ -314,7 +329,7 @@
                     <div class="about-visual reveal">
                         <svg class="about-watermark" aria-hidden="true"><use href="#i-shield"></use></svg>
                         <div class="experience-badge" id="experienceBadge">
-                            <span id="yearsOfExperience" data-count-suffix="+">12+</span>
+                            <span id="yearsOfExperience" data-count-suffix="+">10+</span>
                             <span data-i18n="about.years">Years of Experience</span>
                         </div>
                     </div>
@@ -323,7 +338,7 @@
                         <p data-i18n="about.description2">Security isn't just a profession, it's our passion. We stay at the forefront of security trends and technologies to ensure our clients receive the most effective protection against evolving threats.</p>
                         <p data-i18n="about.experience">Starting in 2014, we've built a reputation for excellence in the IT security industry, combining technical expertise with practical business solutions.</p>
                         <div class="social-links">
-                            <a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener" class="social-link linkedin">
+                            <a href="http://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener" class="social-link linkedin">
                                 <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span>
                             </a>
                             <a href="https://www.facebook.com/compyra" target="_blank" rel="noopener" class="social-link facebook">
@@ -348,7 +363,7 @@
                 <div class="apps-panel reveal">
                     <div class="apps-copy">
                         <h3 data-i18n="apps.heading">Android apps on Google Play</h3>
-                        <p data-i18n="apps.description">Alongside client work, I design and publish my own Android apps. Browse the full collection on my Google Play developer page.</p>
+                        <p data-i18n="apps.description">Next to client work I design and publish my own Android apps. Browse the full collection on my Google Play developer page.</p>
                         <p class="apps-note" data-i18n="apps.note">Developer: Rami Labidi</p>
                     </div>
                     <a class="apps-cta" href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">
@@ -428,17 +443,17 @@
                         <li><a href="#about" data-i18n="nav.about">About</a></li>
                         <li><a href="#apps" data-i18n="nav.apps">Apps</a></li>
                         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-                        <li><a href="/support/" data-i18n="nav.support">Support</a></li>
+                        <li><a href="./support/" data-i18n="nav.support">Support</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2026</span> Compyra. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+                <p>&copy; <span id="currentYear">2025</span> Compyra. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
             </div>
         </div>
     </footer>
 
-    <script src="javascript.js?ver=1.0.0"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>

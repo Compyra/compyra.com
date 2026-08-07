@@ -1,61 +1,11 @@
-"""Generator for /nl/ and /fr/ localized pages from the English index.html.
+"""One-off generator for /nl/ and /fr/ localized pages from the English index.html.
 Produces static, crawler-visible localized HTML with correct canonical/hreflang/locale.
-Also refreshes the CSP inline-code hashes of index.html and 404.html in place,
-so rerun this script after editing any inline <script> or <style>.
 """
-import base64
-import hashlib
 import re
 import html
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-
-
-def _hashes(snippets):
-    """CSP sha256 sources for inline code. The repo stores LF but Windows worktrees
-    are CRLF, so hash both forms: production serves LF, local previews serve CRLF."""
-    out = []
-    for text in snippets:
-        for variant in {text, text.replace("\r\n", "\n")}:
-            h = base64.b64encode(hashlib.sha256(variant.encode("utf-8")).digest()).decode()
-            src_ = f"'sha256-{h}'"
-            if src_ not in out:
-                out.append(src_)
-    return out
-
-
-def refresh_csp(page):
-    """Rewrite the script-src/style-src hash lists in the page's CSP meta tag.
-    Only plain <script>/<style> count: src= scripts and JSON-LD are not executed inline."""
-    m = re.search(r'(<meta http-equiv="Content-Security-Policy" content=")([^"]*)(")', page)
-    if not m:
-        return page
-    policy = m.group(2)
-    live = re.sub(r"<!--.*?-->", "", page, flags=re.S)
-    scripts = re.findall(r"<script>(.*?)</script>", live, re.S)
-    styles = re.findall(r"<style>(.*?)</style>", live, re.S)
-    policy = re.sub(r"script-src [^;]*",
-                    " ".join(["script-src 'self'"] + _hashes(scripts)), policy)
-    policy = re.sub(r"style-src [^;]*",
-                    " ".join(["style-src 'self'"] + _hashes(styles)), policy)
-    return page[:m.start(2)] + policy + page[m.end(2):]
-
-
-def refresh_csp_file(name):
-    path = ROOT / name
-    with path.open(encoding="utf-8", newline="") as f:
-        text = f.read()
-    new = refresh_csp(text)
-    if new != text:
-        with path.open("w", encoding="utf-8", newline="") as f:
-            f.write(new)
-        print("csp refreshed", name)
-
-
-refresh_csp_file("index.html")
-refresh_csp_file("404.html")
-
 src = (ROOT / "index.html").read_text(encoding="utf-8")
 
 NL = {
@@ -92,7 +42,7 @@ NL = {
     "certifications.network.connecting": "Connecting Networks (Cisco)",
     "about.title": "Over Compyra",
     "about.years": "Jaren Ervaring",
-    "about.description1": "Compyra biedt deskundige IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij complete oplossingen om uw digitale activa te beschermen.",
+    "about.description1": "Compyra biedt expert IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij uitgebreide oplossingen om uw digitale activa te beschermen.",
     "about.description2": "Beveiliging is niet alleen een beroep, het is onze passie. We blijven voorop lopen in beveiligingstrends en -technologieën om ervoor te zorgen dat onze klanten de meest effectieve bescherming krijgen tegen evoluerende bedreigingen.",
     "about.experience": "Sinds 2014 hebben we een reputatie opgebouwd voor uitmuntendheid in de IT-beveiligingsindustrie, door technische expertise te combineren met praktische bedrijfsoplossingen.",
     "about.projects.title": "Benieuwd wat ik bouw?",
@@ -158,9 +108,9 @@ FR = {
     "apps.note": "Développeur : Rami Labidi",
     "apps.cta": "Voir mes applications sur Google Play",
     "contact.title": "Contactez-nous",
-    "contact.description": "Prêt à sécuriser votre entreprise ou besoin de conseil informatique ? Contactez-nous dès aujourd'hui.",
+    "contact.description": "Prêt à sécuriser votre entreprise ou besoin de conseil informatique? Contactez-nous dès aujourd'hui.",
     "contact.button": "Contact par Email",
-    "contact.copied": "Copié !",
+    "contact.copied": "Copié!",
     "contact.form.title": "Contactez-moi sur WhatsApp",
     "contact.form.name": "Nom", "contact.form.email": "Email", "contact.form.message": "Message",
     "contact.form.send": "Envoyer",
@@ -261,8 +211,6 @@ def build(lang, tr, meta):
     target = ROOT / meta["lang"] / "index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(out, encoding="utf-8")
-    # Hash the bytes actually on disk (write_text may have converted line endings).
-    refresh_csp_file(f"{meta['lang']}/index.html")
     return target
 
 
