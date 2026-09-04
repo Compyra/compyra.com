@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Compyra — Browser & Device Information (support diagnostics)
+   Compyra · Browser & Device Information (support diagnostics)
    Matches the main Compyra cyber-security / hacker-elegant aesthetic.
    ========================================================================== */
 
@@ -12,41 +12,44 @@
 }
 
 :root {
-    --accent: #12b886;
-    --accent-bright: #2ee6b6;
-    --accent-text: #0b7a5b;
-    --accent-glow: rgba(46, 230, 182, 0.35);
+    --accent: #0b5e9e;
+    --accent-bright: #1550b8;
+    --accent-text: #0b5e9e;
+    --accent-glow: rgba(21, 80, 184, 0.22);
 
     --border-radius: 12px;
-    --shadow: 0 10px 30px rgba(15, 17, 21, 0.12);
-    --shadow-lg: 0 24px 60px rgba(15, 17, 21, 0.18);
+    --shadow: 0 10px 30px rgba(30, 50, 90, 0.12);
+    --shadow-lg: 0 24px 60px rgba(30, 50, 90, 0.16);
     --transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 
     /* Light theme */
-    --bg-color: #f6f8fb;
-    --bg-alt: #eef1f6;
-    --text-color: #1f2430;
-    --text-muted: #5b6472;
+    --bg-color: #e8effd;
+    --bg-alt: #dde8fc;
+    --text-color: #101c33;
+    --text-muted: #3d5170;
     --card-bg: #ffffff;
-    --card-border: rgba(15, 17, 21, 0.06);
-    --header-bg: rgba(255, 255, 255, 0.72);
-    --footer-bg: #0f1115;
-    --footer-text: #f6f8fb;
-    --border-color: #e6e9ef;
+    --card-border: rgba(11, 94, 158, 0.12);
+    --header-bg: rgba(238, 244, 255, 0.82);
+    --footer-bg: #050c24;
+    --footer-text: #eaf2ff;
+    --border-color: rgba(11, 94, 158, 0.2);
 }
 
 [data-theme="dark"] {
-    --accent-text: #2ee6b6;
-    --bg-color: #0f1115;
-    --bg-alt: #14171d;
-    --text-color: #e8ebf1;
-    --text-muted: #9aa4b2;
-    --card-bg: #171a21;
-    --card-border: rgba(255, 255, 255, 0.06);
-    --header-bg: rgba(15, 17, 21, 0.72);
-    --footer-bg: #0a0b0e;
-    --footer-text: #e8ebf1;
-    --border-color: #262b34;
+    --accent: #4fd6ff;
+    --accent-bright: #2b8bff;
+    --accent-text: #4fd6ff;
+    --accent-glow: rgba(79, 214, 255, 0.25);
+    --bg-color: #030816;
+    --bg-alt: #050c24;
+    --text-color: #eaf2ff;
+    --text-muted: #9fb3d8;
+    --card-bg: #081231;
+    --card-border: rgba(79, 214, 255, 0.16);
+    --header-bg: rgba(4, 10, 28, 0.78);
+    --footer-bg: #04091c;
+    --footer-text: #eaf2ff;
+    --border-color: rgba(79, 214, 255, 0.22);
 }
 
 html {
@@ -105,6 +108,7 @@ header .container {
     display: flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
 }
 
 .logo img {
@@ -196,7 +200,7 @@ header .container {
     padding: 7px 16px;
     border: 1px solid var(--accent);
     border-radius: 999px;
-    background: rgba(46, 230, 182, 0.08);
+    background: rgba(79, 214, 255, 0.08);
     margin-bottom: 22px;
 }
 
@@ -276,7 +280,7 @@ header .container {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-    color: #05231a;
+    color: #ffffff;
     box-shadow: 0 8px 22px var(--accent-glow);
 }
 
@@ -342,7 +346,7 @@ main {
     border-radius: 11px;
     font-size: 1.3rem;
     color: var(--accent-text);
-    background: linear-gradient(135deg, rgba(18, 184, 134, 0.16), rgba(46, 230, 182, 0.08));
+    background: linear-gradient(135deg, rgba(43, 139, 255, 0.16), rgba(79, 214, 255, 0.08));
 }
 
 .card-head h2 {
@@ -403,11 +407,11 @@ main {
 .copy-btn:hover {
     color: var(--accent-text);
     border-color: var(--accent);
-    background: rgba(46, 230, 182, 0.1);
+    background: rgba(79, 214, 255, 0.1);
 }
 
 .copy-btn.copied {
-    color: #05231a;
+    color: #ffffff;
     background: var(--accent-bright);
     border-color: transparent;
 }
@@ -419,7 +423,7 @@ main {
     bottom: 28px;
     transform: translate(-50%, 20px);
     background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-    color: #05231a;
+    color: #ffffff;
     font-weight: 600;
     padding: 12px 22px;
     border-radius: 999px;

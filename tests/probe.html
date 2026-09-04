@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>projects error probe</title>
+<pre id="out">RUNNING</pre>
+<iframe id="f" style="border:0;width:1440px;height:900px"></iframe>
+<script>
+    const out = [];
+    const f = document.getElementById('f');
+    f.addEventListener('load', () => {
+        const w = f.contentWindow;
+        w.addEventListener('error', e => out.push('LATE JS ERROR: ' + e.message + ' @' + e.filename + ':' + e.lineno));
+        setTimeout(() => {
+            try {
+                const d = f.contentDocument;
+                out.push('featured cards: ' + d.querySelectorAll('.featured-card').length);
+                const card = d.querySelector('.featured-card');
+                out.push('first card opacity: ' + w.getComputedStyle(card).opacity);
+                out.push('html.js: ' + d.documentElement.classList.contains('js'));
+                out.push('TRANSLATIONS type: ' + typeof w.TRANSLATIONS);
+                out.push('year: ' + (d.getElementById('currentYear') || {}).textContent);
+                out.push('visible reveals: ' + d.querySelectorAll('.reveal.visible').length + '/' + d.querySelectorAll('.reveal').length);
+                out.push('brand marks: ' + d.querySelectorAll('.card-icon--app .icon').length);
+            } catch (e) { out.push('PROBE ERROR: ' + e.message); }
+            document.getElementById('out').textContent = 'DONE\n' + out.join('\n');
+        }, 2500);
+    });
+    // capture errors that happen during load
+    f.src = '/projects/';
+</script>

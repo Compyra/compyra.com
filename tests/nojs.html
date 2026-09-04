@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>no-JS audit</title>
+<pre id="out">RUNNING</pre>
+<!-- sandbox without allow-scripts: page renders with JS disabled -->
+<iframe id="f" sandbox="allow-same-origin" style="border:0;width:1200px;height:900px" src="/services/"></iframe>
+<script>
+    const f = document.getElementById('f');
+    f.addEventListener('load', () => {
+        setTimeout(() => {
+            const out = [];
+            try {
+                const d = f.contentDocument;
+                const w = f.contentWindow;
+                const card = d.querySelector('.service-card');
+                const op = w.getComputedStyle(card).opacity;
+                out.push((op === '1' ? 'PASS' : 'FAIL') + ' no-JS: service cards visible (opacity=' + op + ')');
+                out.push((d.documentElement.className.indexOf('js') === -1 ? 'PASS' : 'FAIL') + ' no-JS: js class absent');
+                const sub = d.querySelector('#site-header nav');
+                out.push((sub ? 'PASS' : 'FAIL') + ' no-JS: nav present');
+            } catch (e) {
+                out.push('ERROR ' + e.message);
+            }
+            document.getElementById('out').textContent = 'DONE\n' + out.join('\n');
+        }, 400);
+    });
+</script>

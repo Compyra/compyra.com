@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <script>/* Humans -> /projects/ in nl; crawlers keep this localized page for SEO. */
+(function(){var u=navigator.userAgent||'';if(/bot|crawl|spider|slurp|bingpreview|googlebot|facebookexternalhit|embedly|pinterest|vkshare|w3c_validator|lighthouse|headless/i.test(u))return;try{localStorage.setItem('preferredLanguage','nl');}catch(e){}location.replace('/projects/?lang=nl');})();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecten &amp; Software · Compyra</title>
+
+    <script>
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'light' && t !== 'dark') {
+                t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-700-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/roboto-400-latin.woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fonts.css">
+
+    <meta name="description" content="Software van Compyra: Labidi Scanner, Labidi Disk Analyzer en LabidiForensic voor Windows, GhostTooth voor Android, huiskeuring.be, het labidi.eu-portaal en meer. Standaard privé, geen tracking.">
+    <meta name="author" content="Compyra">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e8effd" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#030816" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark light">
+
+    <link rel="icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compyra.com/nl/projects/">
+    <meta property="og:site_name" content="Compyra">
+    <meta property="og:title" content="Projecten &amp; Software · Compyra">
+    <meta property="og:description" content="Software van Compyra: Labidi Scanner, Labidi Disk Analyzer en LabidiForensic voor Windows, GhostTooth voor Android, huiskeuring.be, het labidi.eu-portaal en meer. Standaard privé, geen tracking.">
+    <meta property="og:image" content="https://compyra.com/og-image.png">
+    <meta property="og:locale" content="nl_NL">
+
+    <link rel="canonical" href="https://compyra.com/nl/projects/">
+    <link rel="alternate" hreflang="en" href="https://compyra.com/projects/">
+    <link rel="alternate" hreflang="nl" href="https://compyra.com/nl/projects/">
+    <link rel="alternate" hreflang="fr" href="https://compyra.com/fr/projects/">
+    <link rel="alternate" hreflang="x-default" href="https://compyra.com/projects/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Projects & Software · Compyra",
+      "url": "https://compyra.com/projects/",
+      "about": { "@type": "Organization", "name": "Compyra", "url": "https://compyra.com" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          { "@type": "SoftwareApplication", "position": 1, "name": "Labidi Disk Analyzer", "operatingSystem": "Windows", "applicationCategory": "UtilitiesApplication", "url": "https://diskanalyzer.labidi.eu" },
+          { "@type": "SoftwareApplication", "position": 2, "name": "Labidi Scanner", "operatingSystem": "Windows", "applicationCategory": "UtilitiesApplication", "url": "https://scanner.labidi.eu" },
+          { "@type": "SoftwareApplication", "position": 3, "name": "LabidiForensic", "operatingSystem": "Windows", "applicationCategory": "UtilitiesApplication", "url": "https://forensic.labidi.eu" },
+          { "@type": "SoftwareApplication", "position": 4, "name": "GhostTooth", "operatingSystem": "Android", "applicationCategory": "SecurityApplication", "url": "https://ghosttooth.labidi.eu" },
+          { "@type": "WebSite", "position": 5, "name": "Huiskeuring.be", "url": "https://huiskeuring.be" },
+          { "@type": "WebSite", "position": 6, "name": "labidi.eu", "url": "https://labidi.eu" }
+        ]
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Inline SVG icon sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+        <symbol id="i-bluetooth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10-5 5V2l5 5L7 17"/></symbol>
+        <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></symbol>
+        <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+        <symbol id="i-googleplay" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.1c-.37.25-.6.68-.6 1.24v17.32c0 .56.23.99.6 1.24l9.4-9.9-9.4-9.9z"/><path d="M14.3 13.36l2.5 2.63-10.5 6.06c-.31.18-.6.24-.85.2l8.85-8.89z"/><path d="M14.3 10.64L5.45 1.75c.25-.04.54.02.85.2l10.5 6.06-2.5 2.63z"/><path d="M17.93 8.63l2.5 1.44c.9.52.9 1.34 0 1.86l-2.5 1.44L15.2 12l2.73-3.37z"/></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4L10 14"/><path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    </svg>
+
+    <a href="#main" class="skip-link" data-i18n="a11y.skip">Ga naar hoofdinhoud</a>
+
+    <header id="site-header">
+        <div class="container">
+            <a class="brand" href="/" aria-label="Compyra, home">
+                <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                <span class="brand-name">COMPYRA
+                    <span class="brand-sub" data-i18n="brand.sub">IT Beveiliging &amp; Consultancy</span>
+                </span>
+            </a>
+
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="/" data-i18n="nav.home">Home</a></li>
+                    <li><a href="/services/" data-i18n="nav.services">Diensten</a></li>
+                    <li><a href="/certifications/" data-i18n="nav.certifications">Certificeringen</a></li>
+                    <li><a href="/projects/" aria-current="page" data-i18n="nav.projects">Projecten</a></li>
+                    <li><a href="/about/" data-i18n="nav.aboutus">Wie We Zijn</a></li>
+                    <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <div class="language-selector" role="group" aria-label="Language">
+                    <button type="button" data-lang="en" class="language-btn" aria-pressed="false">EN</button>
+                    <button type="button" data-lang="nl" class="language-btn active" aria-pressed="true">NL</button>
+                    <button type="button" data-lang="fr" class="language-btn" aria-pressed="false">FR</button>
+                </div>
+
+                <div class="theme-toggle">
+                    <button id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                        <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+                    </button>
+                </div>
+
+                <button class="mobile-menu" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                    <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="container">
+                <h1 id="page-title" data-i18n="projects.title">Projecten &amp; Software</h1>
+                <p data-i18n="projects.lead">Alles hier is in eigen huis ontworpen en gebouwd, volgens dezelfde regels: standaard privé, geen tracking, geen accounts tenzij essentieel, en draagbaar waar mogelijk.</p>
+            </div>
+        </section>
+
+        <section id="tools" aria-labelledby="tools-title">
+            <div class="container">
+                <h2 id="tools-title" class="section-title reveal" data-i18n="projects.tools.title">Draagbare Windows-tools</h2>
+                <div class="featured-grid">
+                    <article class="featured-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon card-icon--app">
+                                <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="wedge" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0" stop-color="#4fd6ff"/>
+                                            <stop offset="1" stop-color="#2b8bff"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="32" cy="32" r="29" fill="#0a1a3f" stroke="#4fd6ff" stroke-opacity=".55" stroke-width="2"/>
+                                    <circle cx="32" cy="32" r="21" fill="none" stroke="#4fd6ff" stroke-opacity=".35" stroke-width="2"/>
+                                    <circle cx="32" cy="32" r="13" fill="none" stroke="#4fd6ff" stroke-opacity=".25" stroke-width="2"/>
+                                    <path d="M32 32 L32 5 A27 27 0 0 1 51.1 12.9 Z" fill="url(#wedge)"/>
+                                    <circle cx="32" cy="32" r="4.5" fill="#4fd6ff"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Labidi Disk Analyzer</h3>
+                                <p class="card-kind" data-i18n="projects.kind.win">Windows · één draagbaar .exe-bestand</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.da.desc">Beantwoordt twee vragen over een schijf: waar ging de ruimte naartoe, en wat is er sindsdien veranderd? Scan een schijf en rangschik mappen op grootte, grootste en recentste bestanden, maak daarna een snapshot en vergelijk die later om exact te zien wat een installatie of een week gebruik veranderde.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="projects.da.f1">Eén statisch bestand, geen installatie, geen afhankelijkheden, geen admin nodig</li>
+                            <li data-i18n="projects.da.f2">Geen sporen: geen register, geen AppData, geen netwerk</li>
+                            <li data-i18n="projects.da.f3">Console- en volledige grafische modus vanuit hetzelfde bestand</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a class="btn primary-btn" href="https://diskanalyzer.labidi.eu" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                                diskanalyzer.labidi.eu
+                            </a>
+                            <a class="btn secondary-btn btn-dl" href="https://diskanalyzer.labidi.eu/download/LabidiDiskAnalyzer.exe" rel="noopener" title="Download LabidiDiskAnalyzer.exe" aria-label="Download LabidiDiskAnalyzer.exe">
+                                <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="featured-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon card-icon--app">
+                                <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0" stop-color="#4fd6ff"/>
+                                            <stop offset="1" stop-color="#2b8bff"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="32" cy="32" r="29" fill="#0a1a3f" stroke="#4fd6ff" stroke-opacity=".55" stroke-width="2"/>
+                                    <circle cx="32" cy="32" r="21" fill="none" stroke="#4fd6ff" stroke-opacity=".35" stroke-width="2"/>
+                                    <circle cx="32" cy="32" r="13" fill="none" stroke="#4fd6ff" stroke-opacity=".25" stroke-width="2"/>
+                                    <path d="M32 32 L32 5 A27 27 0 0 1 45.5 8.6 Z" fill="url(#sweep)"/>
+                                    <circle cx="20" cy="22" r="3" fill="#4fd6ff"/>
+                                    <circle cx="43" cy="41" r="3" fill="#8a6bff"/>
+                                    <circle cx="24" cy="45" r="2.5" fill="#57e39b"/>
+                                    <circle cx="32" cy="32" r="4.5" fill="#4fd6ff"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Labidi Scanner</h3>
+                                <p class="card-kind" data-i18n="projects.kind.win">Windows · één draagbaar .exe-bestand</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.ls.desc">Een netwerkscanner voor de engineer die met een laptop en zonder installatierechten in een serverlokaal staat. Voer hem zonder argumenten uit en binnen enkele seconden ken je elk toestel op het subnet: IP, MAC, fabrikant, hostnaam en welke poorten antwoorden.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="projects.ls.f1">Apparaatdetectie, poortscan, DHCP-controle, verbindingsdiagnose, Wake-on-LAN</li>
+                            <li data-i18n="projects.ls.f2">Uitvoer als tabel, CSV, JSON of platte tekst, of dubbelklik voor een volwaardig venster</li>
+                            <li data-i18n="projects.ls.f3">Werkt vanaf een usb-stick, ook zonder adminrechten</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a class="btn primary-btn" href="https://scanner.labidi.eu" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                                scanner.labidi.eu
+                            </a>
+                            <a class="btn secondary-btn btn-dl" href="https://scanner.labidi.eu/download/LabidiScanner.exe" rel="noopener" title="Download LabidiScanner.exe" aria-label="Download LabidiScanner.exe">
+                                <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="featured-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon card-icon--app">
+                                <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+                                            <stop offset="0" stop-color="#4fd6ff"/>
+                                            <stop offset="1" stop-color="#2b8bff"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="32" cy="32" r="29" fill="#0a1a3f" stroke="#4fd6ff" stroke-opacity=".55" stroke-width="2"/>
+                                    <circle cx="32" cy="32" r="21" fill="none" stroke="#4fd6ff" stroke-opacity=".35" stroke-width="2"/>
+                                    <circle cx="32" cy="32" r="13" fill="none" stroke="#4fd6ff" stroke-opacity=".25" stroke-width="2"/>
+                                    <circle cx="27" cy="27" r="9.5" fill="none" stroke="url(#lens)" stroke-width="3.5"/>
+                                    <line x1="34" y1="34" x2="45" y2="45" stroke="url(#lens)" stroke-width="4.5" stroke-linecap="round"/>
+                                    <circle cx="27" cy="27" r="3" fill="#4fd6ff"/>
+                                    <circle cx="45" cy="19" r="2.4" fill="#ffd166"/>
+                                    <circle cx="19" cy="45" r="2.4" fill="#8a6bff"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>LabidiForensic</h3>
+                                <p class="card-kind" data-i18n="projects.kind.win">Windows · één draagbaar .exe-bestand</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.lf.desc">Leest terug wat een Windows-machine zich over zijn eigen verleden herinnert: elk ooit aangesloten apparaat, verbonden wifinetwerken, uitgevoerde programma's, geopende of verwijderde bestanden, aanmeldingen. Elke run eindigt met een eerlijk overzicht van wat niet gelezen kon worden.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="projects.lf.f1">Apparaten, wifigeschiedenis, programma- en bestandsactiviteit, aanmeldingen, alles in één rapport</li>
+                            <li data-i18n="projects.lf.f2">Eerlijk door ontwerp: leest, verzint nooit, en meldt wat het niet kon zien</li>
+                            <li data-i18n="projects.lf.f3">Werkt vanaf een usb-stick, ook op een dead-box machine; geen installatie, geen admin, geen netwerkcode</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a class="btn primary-btn" href="https://forensic.labidi.eu" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                                forensic.labidi.eu
+                            </a>
+                            <a class="btn secondary-btn btn-dl" href="https://forensic.labidi.eu/download/LabidiForensic.exe" rel="noopener" title="Download LabidiForensic.exe" aria-label="Download LabidiForensic.exe">
+                                <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="apps-sites" aria-labelledby="apps-sites-title">
+            <div class="container">
+                <h2 id="apps-sites-title" class="section-title reveal" data-i18n="projects.apps.title">Apps &amp; sites</h2>
+                <div class="project-grid">
+                    <article class="project-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-bluetooth"></use></svg></div>
+                            <div>
+                                <h3>GhostTooth</h3>
+                                <p class="card-kind" data-i18n="projects.kind.android">Android-app</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.gt.desc">Een bluetoothscanner die trackers en surveillanceapparaten rond je helpt opsporen: scan, identificeer fabrikanten en krijg meldingen over toestellen die je volgen. Gebouwd op een gecureerd, verifieerbaar apparatenregister.</p>
+                        <div class="card-actions">
+                            <a class="btn primary-btn" href="https://play.google.com/store/apps/details?id=com.compyra.ghosttooth" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-googleplay"></use></svg>
+                                Google Play
+                            </a>
+                            <a class="btn secondary-btn" href="https://ghosttooth.labidi.eu" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                                ghosttooth.labidi.eu
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-home"></use></svg></div>
+                            <div>
+                                <h3>Huiskeuring.be</h3>
+                                <p class="card-kind" data-i18n="projects.kind.web">Gratis webtool</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.hk.desc">Een gratis, privacyvriendelijke checklist voor huisbezichtigingen in België: 230 controlepunten met uitleg in klare taal, Belgische deadlines (EPC, asbest, elektrische keuring) en geverifieerde links naar officiële bronnen.</p>
+                        <div class="card-actions">
+                            <a class="btn secondary-btn" href="https://huiskeuring.be" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                                huiskeuring.be
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"></use></svg></div>
+                            <div>
+                                <h3>labidi.eu</h3>
+                                <p class="card-kind" data-i18n="projects.kind.portal">Webapp-portaal</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.le.desc">Ons lab: een portaal met 17+ webapps en experimenten, van PDF Studio en Markdown Studio tot overlevingsgids O.A.S.I.S. Alles draait in je browser, gratis en zonder account.</p>
+                        <div class="card-actions">
+                            <a class="btn secondary-btn" href="https://labidi.eu" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg>
+                                labidi.eu
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="card-head">
+                            <div class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-googleplay"></use></svg></div>
+                            <div>
+                                <h3 data-i18n="apps.heading">Android-apps op Google Play</h3>
+                                <p class="card-kind" data-i18n="projects.kind.dev">Ontwikkelaarspagina</p>
+                            </div>
+                        </div>
+                        <p data-i18n="projects.play.desc">De volledige collectie van onze gepubliceerde Android-apps, GhostTooth en de rest van de familie, op onze Google Play-ontwikkelaarspagina.</p>
+                        <div class="card-actions">
+                            <a class="btn secondary-btn" href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-googleplay"></use></svg>
+                                <span data-i18n="projects.kind.dev">Ontwikkelaarspagina</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="principles-cta" aria-label="Principles and contact">
+            <div class="container">
+                <div class="principles reveal">
+                    <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+                    <p data-i18n="projects.principles">Gebouwd door een securityconsultancy, dus over de regels valt niet te onderhandelen: standaard privé, geen tracking, geen reclame, en niets belt naar huis. Draagbare tools schrijven alleen wat je er expliciet om vraagt.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-cta" aria-labelledby="contact-cta-title">
+            <div class="container">
+                <div class="cta-panel reveal">
+                    <div class="cta-copy">
+                        <h2 id="contact-cta-title" data-i18n="projects.cta.title">Iets op maat nodig?</h2>
+                        <p data-i18n="projects.cta.desc">We bouwen ook veilige webapps en tools voor klanten. Vertel ons wat u nodig hebt.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a class="btn primary-btn" href="/contact/">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                            <span data-i18n="hero.contact">Neem Contact Op</span>
+                        </a>
+                        <a class="btn secondary-btn" href="/about/" data-i18n="home.note.link">Maak kennis met de mensen achter Compyra</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="/" aria-label="Compyra, home">
+                        <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                        <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                        <span class="brand-name">COMPYRA
+                            <span class="brand-sub" data-i18n="brand.sub">IT Beveiliging &amp; Consultancy</span>
+                        </span>
+                    </a>
+                    <p data-i18n="footer.tagline">Beveiligingsconsultancy, penetratietesten en met zorg gebouwde software, in het Engels, Nederlands en Frans.</p>
+                </div>
+                <nav class="footer-col" aria-label="Site">
+                    <h4 data-i18n="footer.site">Site</h4>
+                    <ul>
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/services/" data-i18n="nav.services">Diensten</a></li>
+                        <li><a href="/certifications/" data-i18n="nav.certifications">Certificeringen</a></li>
+                        <li><a href="/projects/" data-i18n="nav.projects">Projecten</a></li>
+                        <li><a href="/about/" data-i18n="nav.aboutus">Wie We Zijn</a></li>
+                        <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="More">
+                    <h4 data-i18n="footer.more">Meer</h4>
+                    <ul>
+                        <li><a href="/support/" data-i18n="nav.support">Ondersteuning</a></li>
+                        <li><a href="https://labidi.eu" target="_blank" rel="noopener">labidi.eu</a></li>
+                        <li><a href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Compyra. <span data-i18n="footer.rights">Alle Rechten Voorbehouden.</span></p>
+                <p data-i18n="footer.made">Ontworpen, gebouwd en beveiligd door Rami Labidi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>window.COMPYRA_LOCALE = 'nl';</script>
+    <script src="/javascript.js"></script>
+</body>
+
+</html>

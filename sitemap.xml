@@ -7,7 +7,7 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/"/>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -17,7 +17,7 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/"/>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,20 +27,158 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/"/>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://compyra.com/info/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://compyra.com/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/services/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/services/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://compyra.com/support/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://compyra.com/nl/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/services/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/services/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/fr/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/services/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/services/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/certifications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/certifications/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/nl/certifications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/certifications/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/fr/certifications/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/certifications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/certifications/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/projects/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/projects/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/nl/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/projects/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/projects/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/fr/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/projects/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/projects/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/projects/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/about/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/nl/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/about/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/fr/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/about/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/contact/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/nl/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/contact/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://compyra.com/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compyra.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://compyra.com/nl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compyra.com/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compyra.com/contact/"/>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <script>/* Humans -> /about/ in fr; crawlers keep this localized page for SEO. */
+(function(){var u=navigator.userAgent||'';if(/bot|crawl|spider|slurp|bingpreview|googlebot|facebookexternalhit|embedly|pinterest|vkshare|w3c_validator|lighthouse|headless/i.test(u))return;try{localStorage.setItem('preferredLanguage','fr');}catch(e){}location.replace('/about/?lang=fr');})();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui Sommes-Nous · Compyra</title>
+
+    <script>
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'light' && t !== 'dark') {
+                t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-700-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/roboto-400-latin.woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fonts.css">
+
+    <meta name="description" content="Rencontrez les personnes derrière Compyra : Rami Labidi, consultant en sécurité informatique et créateur de logiciels. Parcours, certifications et outils publiés.">
+    <meta name="author" content="Compyra">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e8effd" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#030816" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark light">
+
+    <link rel="icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compyra.com/fr/about/">
+    <meta property="og:site_name" content="Compyra">
+    <meta property="og:title" content="Qui Sommes-Nous · Compyra">
+    <meta property="og:description" content="Rencontrez les personnes derrière Compyra : Rami Labidi, consultant en sécurité informatique et créateur de logiciels. Parcours, certifications et outils publiés.">
+    <meta property="og:image" content="https://compyra.com/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <link rel="canonical" href="https://compyra.com/fr/about/">
+    <link rel="alternate" hreflang="en" href="https://compyra.com/about/">
+    <link rel="alternate" hreflang="nl" href="https://compyra.com/nl/about/">
+    <link rel="alternate" hreflang="fr" href="https://compyra.com/fr/about/">
+    <link rel="alternate" hreflang="x-default" href="https://compyra.com/about/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Us · Compyra",
+      "url": "https://compyra.com/about/",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Rami Labidi",
+        "jobTitle": "Founder, IT Security & Consulting",
+        "worksFor": { "@type": "Organization", "name": "Compyra", "url": "https://compyra.com" },
+        "knowsLanguage": ["en", "nl", "fr"],
+        "sameAs": [
+          "https://www.linkedin.com/in/ramilabidi",
+          "https://play.google.com/store/apps/dev?id=4849332466549031771",
+          "https://labidi.eu"
+        ]
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Inline SVG icon sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+        <symbol id="i-cert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5L8 22l4-2 4 2-1-7.5"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.9 22 14.35V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H9z"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a7 7 0 0 1 14 0v1M16 4a4 4 0 0 1 0 8M22 21v-1a7 7 0 0 0-4-6.3"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    </svg>
+
+    <a href="#main" class="skip-link" data-i18n="a11y.skip">Aller au contenu principal</a>
+
+    <header id="site-header">
+        <div class="container">
+            <a class="brand" href="/" aria-label="Compyra, home">
+                <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                <span class="brand-name">COMPYRA
+                    <span class="brand-sub" data-i18n="brand.sub">Sécurité &amp; Conseil IT</span>
+                </span>
+            </a>
+
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="/services/" data-i18n="nav.services">Services</a></li>
+                    <li><a href="/certifications/" data-i18n="nav.certifications">Certifications</a></li>
+                    <li><a href="/projects/" data-i18n="nav.projects">Projets</a></li>
+                    <li><a href="/about/" aria-current="page" data-i18n="nav.aboutus">Qui Sommes-Nous</a></li>
+                    <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <div class="language-selector" role="group" aria-label="Language">
+                    <button type="button" data-lang="en" class="language-btn" aria-pressed="false">EN</button>
+                    <button type="button" data-lang="nl" class="language-btn" aria-pressed="false">NL</button>
+                    <button type="button" data-lang="fr" class="language-btn active" aria-pressed="true">FR</button>
+                </div>
+
+                <div class="theme-toggle">
+                    <button id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                        <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+                    </button>
+                </div>
+
+                <button class="mobile-menu" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                    <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="container">
+                <h1 id="page-title" data-i18n="about.title">À Propos de Compyra</h1>
+                <p data-i18n="about.lead">Une petite structure où tout se fait à la main : la personne à qui vous parlez est celle qui fait le travail. Voici qui nous sommes et d'où nous venons.</p>
+            </div>
+        </section>
+
+        <section id="company" aria-label="About the company">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-visual reveal">
+                        <svg class="about-watermark" aria-hidden="true"><use href="#i-shield"></use></svg>
+                        <div class="experience-badge" id="experienceBadge">
+                            <span id="yearsOfExperience" data-count-suffix="+">12+</span>
+                            <span data-i18n="about.years">Années d'Expérience</span>
+                        </div>
+                    </div>
+                    <div class="about-text reveal">
+                        <p data-i18n="about.description1">Compyra fournit des services d'experts en sécurité informatique et en conseil aux entreprises de toutes tailles. Avec une vaste expérience en cybersécurité, tests de pénétration et développement web, nous offrons des solutions complètes pour protéger vos actifs numériques.</p>
+                        <p data-i18n="about.description2">La sécurité n'est pas seulement une profession, c'est notre passion. Nous restons à la pointe des tendances et technologies de sécurité pour garantir à nos clients la protection la plus efficace contre les menaces évolutives.</p>
+                        <p data-i18n="about.experience">Depuis 2014, nous avons bâti une réputation d'excellence dans l'industrie de la sécurité informatique, combinant expertise technique et solutions commerciales pratiques.</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener" class="social-link">
+                                <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.facebook.com/compyra" target="_blank" rel="noopener" class="social-link">
+                                <svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg><span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" aria-labelledby="team-title">
+            <div class="container">
+                <h2 id="team-title" class="section-title reveal" data-i18n="about.team.title">L'équipe</h2>
+                <div class="team-grid">
+                    <article class="person-card reveal">
+                        <div class="person-head">
+                            <div class="avatar" aria-hidden="true">RL</div>
+                            <div>
+                                <h2>Rami Labidi</h2>
+                                <p class="person-role" data-i18n="about.rl.role">Fondateur, Sécurité &amp; Conseil IT</p>
+                            </div>
+                        </div>
+                        <div class="person-chips">
+                            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg> <span data-i18n="home.meta.since">Dans l'IT depuis 2014</span></span>
+                            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="about.chip.certs">10 certifications</span></span>
+                            <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg> EN · NL · FR</span>
+                        </div>
+                        <p data-i18n="about.rl.p1">J'ai commencé dans l'IT en 2014 côté réseau, routage et commutation Cisco, puis j'ai évolué vers la partie du métier qui me tient le plus à cœur : la sécurité. Aujourd'hui, je partage mon temps entre le conseil aux entreprises et la création de mes propres logiciels.</p>
+                        <p data-i18n="about.rl.p2">En chemin, j'ai obtenu CompTIA Security+, Certified Ethical Hacker et la certification Security Operations Analyst de Microsoft, ainsi que des certifications SentinelOne, Keeper Security et Zscaler. Je travaille en français, néerlandais et anglais.</p>
+                        <p data-i18n="about.rl.p3">La sécurité est le métier ; créer est le passe-temps qui a pris de l'ampleur. Je publie des applications Android sur Google Play, je gère un portail d'applications web sur labidi.eu et je diffuse des outils Windows portables écrits en Go. Tout ce que je publie suit les mêmes règles : privé par défaut, sans pistage, et sans installation quand un seul fichier portable suffit.</p>
+                        <div class="person-links">
+                            <a class="btn primary-btn" href="/contact/">
+                                <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                                <span data-i18n="hero.contact">Contactez-nous</span>
+                            </a>
+                            <a class="btn secondary-btn" href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener">
+                                <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder: second profile to be announced -->
+                    <article class="person-card person-card--placeholder reveal" aria-label="Second team member, to be announced">
+                        <div class="person-head">
+                            <div class="avatar avatar--empty" aria-hidden="true">
+                                <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+                            </div>
+                            <div>
+                                <h2 data-i18n="about.tba.title">Bientôt annoncé</h2>
+                                <p class="person-role" data-i18n="about.tba.role">Cette place est réservée</p>
+                            </div>
+                        </div>
+                        <p data-i18n="about.tba.desc">Compyra devient une histoire à deux. Nous présenterons bientôt notre binôme ici, restez à l'écoute.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" aria-labelledby="journey-title">
+            <div class="container">
+                <h2 id="journey-title" class="section-title reveal" data-i18n="about.journey.title">Le parcours jusqu'ici</h2>
+                <ol class="timeline reveal">
+                    <li>
+                        <h3 data-i18n="about.j1.title">2014 : premiers pas dans l'IT</h3>
+                        <p data-i18n="about.j1.desc">Débuts professionnels côté infrastructure : réseaux, routage et commutation, appuyés par trois formations réseau Cisco.</p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="about.j2.title">Spécialisation en sécurité</h3>
+                        <p data-i18n="about.j2.desc">Le passage de faire tourner les systèmes à les protéger : CompTIA Security+, Certified Ethical Hacker et Microsoft Security Operations Analyst, avec un travail concret autour de SentinelOne, Keeper Security et Zscaler.</p>
+                    </li>
+                    <li>
+                        <h3>Compyra</h3>
+                        <p data-i18n="about.j3.desc">Le conseil sous notre propre bannière : évaluations de sécurité, tests de pénétration, réponse aux incidents, conseil IT et développement web pour les entreprises, en trois langues.</p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="about.j4.title">Aujourd'hui : conseil et créations</h3>
+                        <p><span data-i18n="about.j4.desc">En plus des missions clients, nous concevons et publions nos propres logiciels : applications Android sur Google Play, un portail d'applications web et des outils Windows portables.</span>
+                            <a href="/projects/" data-i18n="about.j4.link">Voir la page projets pour une vue d'ensemble.</a></p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="numbers" aria-labelledby="numbers-title">
+            <div class="container">
+                <h2 id="numbers-title" class="section-title reveal" data-i18n="about.numbers.title">En chiffres</h2>
+                <div class="stats-grid reveal">
+                    <div class="stat">
+                        <span class="stat-value" data-years>12+</span>
+                        <span class="stat-label" data-i18n="about.stat.years">Années dans l'IT</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">10</span>
+                        <span class="stat-label" data-i18n="about.stat.certs">Certifications</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">20+</span>
+                        <span class="stat-label" data-i18n="about.stat.apps">Apps &amp; outils publiés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label" data-i18n="about.stat.langs">Langues de travail</span>
+                    </div>
+                </div>
+                <p class="achievements-note reveal" data-i18n="about.certnote">Certifications : CompTIA Security+ · Certified Ethical Hacker (EC-Council) · Microsoft Security Operations Analyst · SentinelOne Paladin · SentinelOne Incident Responder · Keeper Security · Zscaler Certified Sales Engineer · Cisco Routing &amp; Switching · Cisco Scaling Networks · Cisco Connecting Networks</p>
+            </div>
+        </section>
+
+        <section id="contact-cta" aria-labelledby="contact-cta-title">
+            <div class="container">
+                <div class="cta-panel reveal">
+                    <div class="cta-copy">
+                        <h2 id="contact-cta-title" data-i18n="about.cta.title">Curieux de voir ce que nous créons ?</h2>
+                        <p data-i18n="about.cta.desc">Parcourez nos logiciels, applications et créations, ou parlez-nous de votre projet.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a class="btn primary-btn" href="/projects/">
+                            <svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg>
+                            <span data-i18n="nav.projects">Projets</span>
+                        </a>
+                        <a class="btn secondary-btn" href="/contact/" data-i18n="hero.contact">Contactez-nous</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="/" aria-label="Compyra, home">
+                        <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                        <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                        <span class="brand-name">COMPYRA
+                            <span class="brand-sub" data-i18n="brand.sub">Sécurité &amp; Conseil IT</span>
+                        </span>
+                    </a>
+                    <p data-i18n="footer.tagline">Conseil en sécurité, tests de pénétration et logiciels conçus avec soin, en anglais, néerlandais et français.</p>
+                </div>
+                <nav class="footer-col" aria-label="Site">
+                    <h4 data-i18n="footer.site">Site</h4>
+                    <ul>
+                        <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+                        <li><a href="/services/" data-i18n="nav.services">Services</a></li>
+                        <li><a href="/certifications/" data-i18n="nav.certifications">Certifications</a></li>
+                        <li><a href="/projects/" data-i18n="nav.projects">Projets</a></li>
+                        <li><a href="/about/" data-i18n="nav.aboutus">Qui Sommes-Nous</a></li>
+                        <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="More">
+                    <h4 data-i18n="footer.more">Plus</h4>
+                    <ul>
+                        <li><a href="/support/" data-i18n="nav.support">Assistance</a></li>
+                        <li><a href="https://labidi.eu" target="_blank" rel="noopener">labidi.eu</a></li>
+                        <li><a href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Compyra. <span data-i18n="footer.rights">Tous Droits Réservés.</span></p>
+                <p data-i18n="footer.made">Conçu, développé et sécurisé par Rami Labidi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>window.COMPYRA_LOCALE = 'fr';</script>
+    <script src="/javascript.js"></script>
+</body>
+
+</html>

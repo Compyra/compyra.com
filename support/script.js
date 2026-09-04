@@ -1,12 +1,12 @@
 /* ==========================================================================
-   Compyra — Browser & Device Information (support diagnostics)
+   Compyra · Browser & Device Information (support diagnostics)
    Gathers browser / device / system details, renders them, and lets the
    visitor copy any value or all of them to send to support.
    ========================================================================== */
 
 'use strict';
 
-const unknown = '—';
+const unknown = '-';
 const yesNo = v => (v ? 'Yes' : 'No');
 
 /* ---- Detection helpers --------------------------------------------------- */
@@ -315,14 +315,14 @@ async function copyText(text, message) {
         }
         showToast(message || 'Copied');
     } catch (e) {
-        showToast('Copy failed — please copy manually');
+        showToast('Copy failed, please copy manually');
     }
 }
 
 // Build the "copy all" text from the rendered DOM so async values
 // (battery, storage, location) reflect their resolved state.
 function collectAllText() {
-    const lines = ['Compyra — Browser & Device Information', '='.repeat(40), ''];
+    const lines = ['Compyra · Browser & Device Information', '='.repeat(40), ''];
     document.querySelectorAll('#infoGrid .card').forEach(card => {
         lines.push(`[${card.querySelector('h2').textContent}]`);
         card.querySelectorAll('.row').forEach(row => {
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('emailSupport').addEventListener('click', () => {
         const body = encodeURIComponent(collectAllText());
-        const subject = encodeURIComponent('Browser & Device Information — support request');
+        const subject = encodeURIComponent('Browser & Device Information · support request');
         window.location.href = `mailto:support@compyra.com?subject=${subject}&body=${body}`;
     });
 

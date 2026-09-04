@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services · Compyra IT Security & Consulting</title>
+
+    <script>
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'light' && t !== 'dark') {
+                t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-700-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/roboto-400-latin.woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fonts.css">
+
+    <meta name="description" content="Compyra services: security consultation, penetration testing, incident response and forensics, cyber awareness, secure web development and IT consulting, delivered hands-on in English, Dutch and French.">
+    <meta name="author" content="Compyra">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e8effd" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#030816" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark light">
+
+    <link rel="icon" href="/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compyra.com/services/">
+    <meta property="og:site_name" content="Compyra">
+    <meta property="og:title" content="Services · Compyra IT Security & Consulting">
+    <meta property="og:description" content="Security consultation, penetration testing, incident response, cyber awareness, secure web development and IT consulting.">
+    <meta property="og:image" content="https://compyra.com/og-image.png">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="canonical" href="https://compyra.com/services/">
+    <link rel="alternate" hreflang="en" href="https://compyra.com/services/">
+    <link rel="alternate" hreflang="nl" href="https://compyra.com/nl/services/">
+    <link rel="alternate" hreflang="fr" href="https://compyra.com/fr/services/">
+    <link rel="alternate" hreflang="x-default" href="https://compyra.com/services/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Services · Compyra",
+      "url": "https://compyra.com/services/",
+      "about": { "@type": "Organization", "name": "Compyra", "url": "https://compyra.com" },
+      "description": "Security consultation, penetration testing, incident response and forensics, cyber awareness, secure web development and IT consulting."
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Inline SVG icon sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+        <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 6V4M9 5L8 3M15 5l1-2M8 10H4M20 10h-4M8 14H3M21 14h-5M8 18l-2 2M16 18l2 2"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+        <symbol id="i-cogs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a7 7 0 0 1 14 0v1M16 4a4 4 0 0 1 0 8M22 21v-1a7 7 0 0 0-4-6.3"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    </svg>
+
+    <a href="#main" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
+
+    <header id="site-header">
+        <div class="container">
+            <a class="brand" href="/" aria-label="Compyra, home">
+                <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                <span class="brand-name">COMPYRA
+                    <span class="brand-sub" data-i18n="brand.sub">IT Security &amp; Consulting</span>
+                </span>
+            </a>
+
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="/" data-i18n="nav.home">Home</a></li>
+                    <li><a href="/services/" aria-current="page" data-i18n="nav.services">Services</a></li>
+                    <li><a href="/certifications/" data-i18n="nav.certifications">Certifications</a></li>
+                    <li><a href="/projects/" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="/about/" data-i18n="nav.aboutus">About Us</a></li>
+                    <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <div class="language-selector" role="group" aria-label="Language">
+                    <button type="button" data-lang="en" class="language-btn active" aria-pressed="true">EN</button>
+                    <button type="button" data-lang="nl" class="language-btn" aria-pressed="false">NL</button>
+                    <button type="button" data-lang="fr" class="language-btn" aria-pressed="false">FR</button>
+                </div>
+
+                <div class="theme-toggle">
+                    <button id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                        <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+                    </button>
+                </div>
+
+                <button class="mobile-menu" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                    <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="container">
+                <h1 id="page-title" data-i18n="services.title">Services</h1>
+                <p data-i18n="services.lead">From a first security assessment to long-term guidance: hands-on help, delivered by the people you actually talk to.</p>
+            </div>
+        </section>
+
+        <section id="services" aria-label="Our services">
+            <div class="container">
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></div>
+                        <h3 data-i18n="services.security.title">Security Consultation</h3>
+                        <p data-i18n="services.security.description">Security assessments and consultation to protect your business, from a one-off review to a full improvement plan.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="services.security.d1">Security and risk assessments with prioritised, practical advice</li>
+                            <li data-i18n="services.security.d2">Hardening plans your team can actually execute</li>
+                            <li data-i18n="services.security.d3">Vendor-neutral recommendations that fit your size and budget</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-bug"></use></svg></div>
+                        <h3 data-i18n="services.pentesting.title">Penetration Testing</h3>
+                        <p data-i18n="services.pentesting.description">Identifying vulnerabilities in your systems before the bad actors do, and showing you exactly how to close them.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="services.pentesting.d1">Realistic attack scenarios against your applications and infrastructure</li>
+                            <li data-i18n="services.pentesting.d2">Findings with evidence and business impact, readable by management</li>
+                            <li data-i18n="services.pentesting.d3">Retesting after the fixes, so you know the door is really closed</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></div>
+                        <h3 data-i18n="services.ir.title">Incident Response &amp; Forensics</h3>
+                        <p data-i18n="services.ir.description">When something has happened, from an outside attack to an insider threat: investigate, contain and explain.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="services.ir.d1">Investigation of external attacks and insider threats</li>
+                            <li data-i18n="services.ir.d2">Log analysis and timeline reconstruction of the incident</li>
+                            <li data-i18n="services.ir.d3">Clear reporting that tells management exactly what happened</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></div>
+                        <h3 data-i18n="services.awareness.title">Cyber Awareness</h3>
+                        <p data-i18n="services.awareness.description">Humans remain the most important factor in any company. We make security land with every team, in plain language.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="services.awareness.d1">Awareness sessions from the shop floor to the boardroom</li>
+                            <li data-i18n="services.awareness.d2">Practical do's and don'ts people actually remember</li>
+                            <li data-i18n="services.awareness.d3">Given in English, Dutch or French, tailored to your organisation</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg></div>
+                        <h3 data-i18n="services.development.title">Web Development</h3>
+                        <p data-i18n="services.development.description">Creating secure, responsive and modern websites for your business needs, secure by design from the first line.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="services.development.d1">Built secure by design and hardened before launch</li>
+                            <li data-i18n="services.development.d2">Fast, responsive and readable on every device</li>
+                            <li data-i18n="services.development.d3">Maintained and kept up to date after delivery</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-cogs"></use></svg></div>
+                        <h3 data-i18n="services.it.title">IT Consulting</h3>
+                        <p data-i18n="services.it.description">Expert advice on IT infrastructure, optimisation and security improvements, from quick wins to a long-term roadmap.</p>
+                        <ul class="feature-list">
+                            <li data-i18n="services.it.d1">Independent review of your infrastructure and tooling</li>
+                            <li data-i18n="services.it.d2">Pragmatic improvements with visible impact</li>
+                            <li data-i18n="services.it.d3">A trusted sounding board for IT decisions</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-cta" aria-labelledby="contact-cta-title">
+            <div class="container">
+                <div class="cta-panel reveal">
+                    <div class="cta-copy">
+                        <h2 id="contact-cta-title" data-i18n="contact.title">Contact Us</h2>
+                        <p data-i18n="contact.description">Ready to secure your business or need IT consulting? Get in touch with us today.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a class="btn primary-btn" href="/contact/">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                            <span data-i18n="hero.contact">Get in Touch</span>
+                        </a>
+                        <a class="btn secondary-btn" href="/certifications/" data-i18n="services.certlink">See our certifications</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="/" aria-label="Compyra, home">
+                        <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                        <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                        <span class="brand-name">COMPYRA
+                            <span class="brand-sub" data-i18n="brand.sub">IT Security &amp; Consulting</span>
+                        </span>
+                    </a>
+                    <p data-i18n="footer.tagline">Security consulting, penetration testing and software built with care, in English, Dutch and French.</p>
+                </div>
+                <nav class="footer-col" aria-label="Site">
+                    <h4 data-i18n="footer.site">Site</h4>
+                    <ul>
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/services/" data-i18n="nav.services">Services</a></li>
+                        <li><a href="/certifications/" data-i18n="nav.certifications">Certifications</a></li>
+                        <li><a href="/projects/" data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="/about/" data-i18n="nav.aboutus">About Us</a></li>
+                        <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="More">
+                    <h4 data-i18n="footer.more">More</h4>
+                    <ul>
+                        <li><a href="/support/" data-i18n="nav.support">Support</a></li>
+                        <li><a href="https://labidi.eu" target="_blank" rel="noopener">labidi.eu</a></li>
+                        <li><a href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Compyra. <span data-i18n="footer.rights">All Rights Reserved.</span></p>
+                <p data-i18n="footer.made">Designed, built and secured by Rami Labidi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/javascript.js"></script>
+</body>
+
+</html>

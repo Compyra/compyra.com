@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
-    <script>/* Humans -> single-page site in nl; crawlers keep this localized page for SEO. */
+    <script>/* Humans -> / in nl; crawlers keep this localized page for SEO. */
 (function(){var u=navigator.userAgent||'';if(/bot|crawl|spider|slurp|bingpreview|googlebot|facebookexternalhit|embedly|pinterest|vkshare|w3c_validator|lighthouse|headless/i.test(u))return;try{localStorage.setItem('preferredLanguage','nl');}catch(e){}location.replace('/?lang=nl');})();</script>
-    <!-- script-src hashes are recomputed by build_locales.py; rerun it after editing any inline script -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-sjbooTqRVTLAEYkmD0ka4n4hfDPqcOrwz5gxnGDfb4M=' 'sha256-/XGoZ7d8GFgd2bxsVpcm14gzExH/MfrpZFXkOdLPBpk=' 'sha256-+tiB7HiQK7IRaAAc/f2BgZ/DNcKls1S4y1aMDQdJJCY=' 'sha256-oo1pSwZtLTukQOSFoutsBESK0db9nJZr/qgzL6kZ9ac=' 'sha256-7BEY9swXO/fKnI/7cR9PeiJ2z6ztbfSrlESmKONXHIA='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compyra - IT Beveiliging &amp; Consultancy</title>
 
     <script>
-        // Scroll-reveal content is only hidden while the main script is alive.
-        document.documentElement.className += ' js';
-        setTimeout(function () {
-            if (!document.documentElement.hasAttribute('data-reveal-ready')) {
-                document.documentElement.classList.remove('js');
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'light' && t !== 'dark') {
+                t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
             }
-        }, 3000);
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.classList.add('js');
+        })();
     </script>
 
     <link rel="stylesheet" href="/style.css">
@@ -29,13 +28,14 @@
     <link rel="stylesheet" href="/fonts/fonts.css">
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Compyra - IT Beveiliging & Consultancy">
-    <meta name="description" content="Professionele cyberbeveiligingsoplossingen, penetratietesten, IT-consultancy en webontwikkeling in het Engels, Nederlands en Frans.">
-    <meta name="keywords" content="IT security, cybersecurity, penetration testing, web development, website creation, IT consulting, security certification, CompTIA Security+, Certified Ethical Hacker">
+    <meta name="title" content="Compyra - IT Beveiliging &amp; Consultancy">
+    <meta name="description" content="Professionele cyberbeveiligingsoplossingen: incident response, penetratietesten, cyberbewustzijn, IT-consultancy en webontwikkeling, in het Engels, Nederlands en Frans.">
+    <meta name="keywords" content="IT security, cybersecurity, incident response, penetration testing, cyber awareness, web development, website creation, IT consulting, security certification, CompTIA Security+, Certified Ethical Hacker">
     <meta name="author" content="Compyra">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#e8effd" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#030816" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark light">
 
     <!-- Favicon Tags -->
     <link rel="icon" href="/favicons/favicon.ico">
@@ -48,12 +48,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://compyra.com/nl/">
     <meta property="og:site_name" content="Compyra">
-    <meta property="og:title" content="Compyra - IT Beveiliging & Consultancy">
-    <meta property="og:description" content="Professionele cyberbeveiligingsoplossingen, penetratietesten, IT-consultancy en webontwikkeling.">
+    <meta property="og:title" content="Compyra - IT Beveiliging &amp; Consultancy">
+    <meta property="og:description" content="Professionele cyberbeveiligingsoplossingen: incident response, penetratietesten, cyberbewustzijn, IT-consultancy en webontwikkeling, in het Engels, Nederlands en Frans.">
     <meta property="og:image" content="https://compyra.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Compyra — IT Security & Consulting">
+    <meta property="og:image:alt" content="Compyra · IT Security & Consulting">
     <meta property="og:locale" content="nl_NL">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
@@ -61,10 +61,10 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://compyra.com/nl/">
-    <meta property="twitter:title" content="Compyra - IT Beveiliging & Consultancy">
-    <meta property="twitter:description" content="Professionele cyberbeveiligingsoplossingen, penetratietesten, IT-consultancy en webontwikkeling.">
+    <meta property="twitter:title" content="Compyra - IT Beveiliging &amp; Consultancy">
+    <meta property="twitter:description" content="Professionele cyberbeveiligingsoplossingen: incident response, penetratietesten, cyberbewustzijn, IT-consultancy en webontwikkeling, in het Engels, Nederlands en Frans.">
     <meta property="twitter:image" content="https://compyra.com/og-image.png">
-    <meta property="twitter:image:alt" content="Compyra — IT Security & Consulting">
+    <meta property="twitter:image:alt" content="Compyra · IT Security & Consulting">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://compyra.com/nl/">
@@ -84,6 +84,11 @@
       "image": "https://compyra.com/og-image.png",
       "email": "contact@compyra.com",
       "foundingDate": "2014",
+      "founder": {
+        "@type": "Person",
+        "name": "Rami Labidi",
+        "url": "https://compyra.com/about/"
+      },
       "sameAs": [
         "https://www.linkedin.com/in/ramilabidi",
         "https://play.google.com/store/apps/dev?id=4849332466549031771"
@@ -92,7 +97,7 @@
         "@type": "ContactPoint",
         "contactType": "customer support",
         "email": "contact@compyra.com",
-        "url": "https://compyra.com/#contact",
+        "url": "https://compyra.com/contact/",
         "availableLanguage": ["en", "nl", "fr"]
       },
       "priceRange": "$$",
@@ -104,6 +109,8 @@
       "serviceType": [
         "Security Consultation",
         "Penetration Testing",
+        "Incident Response & Forensics",
+        "Cyber Awareness Training",
         "Web Development",
         "IT Consulting"
       ],
@@ -124,11 +131,6 @@
           "name": "Microsoft Certified: Security Operations Analyst"
         }
       ],
-      "mainEntity": {
-        "@type": "WebSite",
-        "name": "Compyra",
-        "url": "https://compyra.com"
-      },
       "openingHours": "Mo,Tu,We,Th,Fr 08:00-19:00"
     }
     </script>
@@ -167,66 +169,50 @@
     })(window,document,'script','dataLayer','GTM-5S43JM6K');</script>
     -->
     <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17545118715"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17545118715');
-    </script>
-    -->
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) — disabled with the rest of analytics -->
-    <!--
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5S43JM6K"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    -->
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Inline SVG icon sprite (replaces Font Awesome CDN) -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <!-- Inline SVG icon sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
         <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
-        <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 6V4M9 5L8 3M15 5l1-2M8 10H4M20 10h-4M8 14H3M21 14h-5M8 18l-2 2M16 18l2 2"/></symbol>
-        <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
-        <symbol id="i-cogs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
         <symbol id="i-cert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5L8 22l4-2 4 2-1-7.5"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a7 7 0 0 1 14 0v1M16 4a4 4 0 0 1 0 8M22 21v-1a7 7 0 0 0-4-6.3"/></symbol>
         <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
-        <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
         <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
         <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
         <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
         <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
         <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
         <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
-        <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 22 10.9 22 14.35V21h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H9z"/></symbol>
-        <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></symbol>
         <symbol id="i-googleplay" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.1c-.37.25-.6.68-.6 1.24v17.32c0 .56.23.99.6 1.24l9.4-9.9-9.4-9.9z"/><path d="M14.3 13.36l2.5 2.63-10.5 6.06c-.31.18-.6.24-.85.2l8.85-8.89z"/><path d="M14.3 10.64L5.45 1.75c.25-.04.54.02.85.2l10.5 6.06-2.5 2.63z"/><path d="M17.93 8.63l2.5 1.44c.9.52.9 1.34 0 1.86l-2.5 1.44L15.2 12l2.73-3.37z"/></symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+        <symbol id="i-user-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="7" r="4"/><path d="M1 21v-1a7 7 0 0 1 13-3.5"/><line x1="17" y1="14" x2="22" y2="19"/><line x1="22" y1="14" x2="17" y2="19"/></symbol>
+        <symbol id="i-history" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 8 8 8"/><polyline points="12 7 12 12 16 14"/></symbol>
+        <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="12" rx="4"/><path d="M12 6V4M9 5L8 3M15 5l1-2M8 10H4M20 10h-4M8 14H3M21 14h-5M8 18l-2 2M16 18l2 2"/></symbol>
+        <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
     </svg>
 
     <a href="#main" class="skip-link" data-i18n="a11y.skip">Ga naar hoofdinhoud</a>
 
     <header id="site-header">
         <div class="container">
-            <div class="logo">
-                <a href="#home" aria-label="Compyra — home">
-                    <img src="/BL.svg" alt="" class="logo-img logo-light" width="50" height="50">
-                    <img src="/WL.png" alt="" class="logo-img logo-dark" width="50" height="50">
-                </a>
-                <span class="brand-name">COMPYRA</span>
-            </div>
+            <a class="brand" href="/" aria-label="Compyra, home">
+                <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                <span class="brand-name">COMPYRA
+                    <span class="brand-sub" data-i18n="brand.sub">IT Beveiliging &amp; Consultancy</span>
+                </span>
+            </a>
 
             <nav aria-label="Primary">
                 <ul>
-                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                    <li><a href="#services" data-i18n="nav.services">Diensten</a></li>
-                    <li><a href="#certifications" data-i18n="nav.certifications">Certificeringen</a></li>
-                    <li><a href="#about" data-i18n="nav.about">Over Ons</a></li>
-                    <li><a href="#apps" data-i18n="nav.apps">Apps</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    <li><a href="/" aria-current="page" data-i18n="nav.home">Home</a></li>
+                    <li><a href="/services/" data-i18n="nav.services">Diensten</a></li>
+                    <li><a href="/certifications/" data-i18n="nav.certifications">Certificeringen</a></li>
+                    <li><a href="/projects/" data-i18n="nav.projects">Projecten</a></li>
+                    <li><a href="/about/" data-i18n="nav.aboutus">Wie We Zijn</a></li>
+                    <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
 
@@ -257,119 +243,102 @@
             <div class="container">
                 <div class="hero-content">
                     <span class="hero-eyebrow" data-i18n="hero.eyebrow">Cyberbeveiliging · Consultancy · Ontwikkeling</span>
-                    <h1 id="hero-title" data-i18n="hero.title">IT Beveiliging &amp; Consultancy</h1>
+                    <h1 id="hero-title"><span data-i18n="hero.title1">IT Beveiliging</span> <span class="grad" data-i18n="hero.title2">&amp; Consultancy</span></h1>
                     <p class="hero-subtitle" data-i18n="hero.subtitle">Professionele cyberbeveiligingsoplossingen voor bedrijven</p>
                     <div class="cta-buttons">
-                        <a href="#services" class="btn primary-btn"><span data-i18n="hero.services">Onze Diensten</span>
+                        <a href="/services/" class="btn primary-btn"><span data-i18n="hero.services">Onze Diensten</span>
                             <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-                        <a href="#contact" class="btn secondary-btn" data-i18n="hero.contact">Neem Contact Op</a>
+                        <a href="/contact/" class="btn secondary-btn" data-i18n="hero.contact">Neem Contact Op</a>
                     </div>
+                    <p class="hero-note"><span data-i18n="home.note">Persoonlijk en hands-on: de persoon met wie je praat, is de persoon die het werk doet.</span>
+                        <a href="/about/" data-i18n="home.note.link">Maak kennis met de mensen achter Compyra</a></p>
+                    <p class="hero-meta">
+                        <span><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> <span data-i18n="home.meta.since">In IT sinds 2014</span></span>
+                        <span><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> <span data-i18n="home.meta.certs">10 professionele certificeringen</span></span>
+                        <span><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> English · Nederlands · Français</span>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="services" aria-labelledby="services-title">
+        <section id="explore" aria-labelledby="explore-title">
             <div class="container">
-                <h2 id="services-title" class="section-title reveal" data-i18n="services.title">Diensten</h2>
-                <div class="services-grid">
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></div>
-                        <h3 data-i18n="services.security.title">Beveiligingsconsultatie</h3>
-                        <p data-i18n="services.security.description">Uitgebreide beveiligingsbeoordeling en consultatie om uw bedrijfsmiddelen te beschermen.</p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-bug"></use></svg></div>
-                        <h3 data-i18n="services.pentesting.title">Penetratietesten</h3>
-                        <p data-i18n="services.pentesting.description">Kwetsbaarheden in uw systemen identificeren voordat kwaadwillenden dat doen.</p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg></div>
-                        <h3 data-i18n="services.development.title">Webontwikkeling</h3>
-                        <p data-i18n="services.development.description">Creëren van veilige, responsieve en moderne websites voor uw bedrijfsbehoeften.</p>
-                    </article>
-                    <article class="service-card reveal">
-                        <div class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-cogs"></use></svg></div>
-                        <h3 data-i18n="services.it.title">IT Consultancy</h3>
-                        <p data-i18n="services.it.description">Deskundig advies over IT-infrastructuur, optimalisatie en beveiligingsverbeteringen.</p>
-                    </article>
+                <h2 id="explore-title" class="section-title reveal" data-i18n="home.explore.title">Ontdek Compyra</h2>
+                <p class="section-lead reveal" data-i18n="home.explore.lead">Alles heeft zijn eigen pagina: kies waar je wilt beginnen.</p>
+                <div class="explore-grid">
+                    <a class="explore-card reveal" href="/services/">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+                        <h3 data-i18n="nav.services">Diensten</h3>
+                        <p data-i18n="home.services.desc">Beveiligingsconsultatie, penetratietesten, incident response, webontwikkeling en IT-consultancy.</p>
+                        <span class="explore-more"><span data-i18n="home.more">Meer info</span> <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+                    </a>
+                    <a class="explore-card reveal" href="/certifications/">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg></span>
+                        <h3 data-i18n="nav.certifications">Certificeringen</h3>
+                        <p data-i18n="home.certifications.desc">Tien beveiligings-, leveranciers- en netwerkcertificeringen, plus awards die het werk onderbouwen.</p>
+                        <span class="explore-more"><span data-i18n="home.more">Meer info</span> <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+                    </a>
+                    <a class="explore-card reveal" href="/projects/">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg></span>
+                        <h3 data-i18n="nav.projects">Projecten</h3>
+                        <p data-i18n="home.projects.desc">Onze eigen software: draagbare Windows-tools, Android-apps en gratis webapps.</p>
+                        <span class="explore-more"><span data-i18n="home.more">Meer info</span> <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+                    </a>
+                    <a class="explore-card reveal" href="/about/">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                        <h3 data-i18n="nav.aboutus">Wie We Zijn</h3>
+                        <p data-i18n="home.about.desc">Wie we zijn, waar we vandaan komen en wat we onderweg hebben bereikt.</p>
+                        <span class="explore-more"><span data-i18n="home.more">Meer info</span> <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="certifications" class="certifications" aria-labelledby="cert-title">
+        <section id="experience" aria-labelledby="experience-title">
             <div class="container">
-                <h2 id="cert-title" class="section-title reveal" data-i18n="certifications.title">Certificeringen</h2>
-                <div class="cert-container">
-                    <div class="cert-group reveal">
-                        <h3 data-i18n="certifications.security.title">Beveiligingscertificeringen</h3>
-                        <ul class="cert-list">
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.security.comptia">CompTIA Security+</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.security.ceh">Certified Ethical Hacker (EC-Council)</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.security.ms">Microsoft Certified: Security Operations Analyst</span></li>
-                        </ul>
-                    </div>
-                    <div class="cert-group reveal">
-                        <h3 data-i18n="certifications.vendor.title">Leverancierscertificeringen</h3>
-                        <ul class="cert-list">
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.vendor.s1paladin">SentinelOne Paladin</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.vendor.s1incident">SentinelOne Incident Responder</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.vendor.keeper">Keeper Security Certificering</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.vendor.zscaler">Zscaler Certified Sales Engineer</span></li>
-                        </ul>
-                    </div>
-                    <div class="cert-group reveal">
-                        <h3 data-i18n="certifications.network.title">Netwerkcertificeringen</h3>
-                        <ul class="cert-list">
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.network.routing">Routing and Switching (Cisco)</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.network.scaling">Scaling Networks (Cisco)</span></li>
-                            <li><svg class="icon" aria-hidden="true"><use href="#i-cert"></use></svg> <span data-i18n="certifications.network.connecting">Connecting Networks (Cisco)</span></li>
-                        </ul>
-                    </div>
+                <h2 id="experience-title" class="section-title reveal" data-i18n="home.exp.title">Ervaring uit de praktijk</h2>
+                <p class="section-lead reveal" data-i18n="home.exp.lead">Een beeld van de incidenten en projecten die we door de jaren heen hebben aangepakt.</p>
+                <div class="explore-grid">
+                    <article class="explore-card reveal">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></span>
+                        <h3 data-i18n="home.exp.ir.title">Onderzoek naar aanvallen van buitenaf</h3>
+                        <p data-i18n="home.exp.ir.desc">Echte aanvallen van buitenaf onderzocht: hoe de indringer binnenkwam, wat er geraakt werd en hoe de deur definitief dichtgaat.</p>
+                    </article>
+                    <article class="explore-card reveal">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-user-x"></use></svg></span>
+                        <h3 data-i18n="home.exp.insider.title">Interne dreigingen</h3>
+                        <p data-i18n="home.exp.insider.desc">Onderzoeken behandeld waarbij de dreiging van binnen de organisatie kwam, met de discretie die dat vraagt.</p>
+                    </article>
+                    <article class="explore-card reveal">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-history"></use></svg></span>
+                        <h3 data-i18n="home.exp.logs.title">Loganalyse &amp; tijdlijnen</h3>
+                        <p data-i18n="home.exp.logs.desc">Logs doorzocht om te reconstrueren wat er gebeurde, met tijdlijnen die het incident glashelder maken voor het management.</p>
+                    </article>
+                    <article class="explore-card reveal">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-bug"></use></svg></span>
+                        <h3 data-i18n="home.exp.pentest.title">Penetratietesten</h3>
+                        <p data-i18n="home.exp.pentest.desc">Systemen getest zoals een aanvaller het zou doen en gerapporteerd zoals een partner het hoort te doen: bevindingen, bewijs en oplossingen.</p>
+                    </article>
+                    <article class="explore-card reveal">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-trend"></use></svg></span>
+                        <h3 data-i18n="home.exp.guidance.title">Langdurige begeleiding</h3>
+                        <p data-i18n="home.exp.guidance.desc">Organisaties over langere periodes begeleid en hun cyberweerbaarheid stap voor stap verhoogd, in een tempo dat standhoudt.</p>
+                    </article>
+                    <article class="explore-card reveal">
+                        <span class="explore-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                        <h3 data-i18n="home.exp.awareness.title">Cyberbewustzijn</h3>
+                        <p data-i18n="home.exp.awareness.desc">Talloze awareness-sessies gegeven in klare taal, want de mens blijft de belangrijkste factor in elk bedrijf.</p>
+                    </article>
                 </div>
+                <p class="exp-note reveal" data-i18n="home.exp.note">Eerlijk is eerlijk: ik ben gewoon dolgraag consultant, en dat zie je aan het werk.</p>
             </div>
         </section>
 
-        <section id="about" class="about" aria-labelledby="about-title">
+        <section id="apps" aria-labelledby="apps-heading">
             <div class="container">
-                <h2 id="about-title" class="section-title reveal" data-i18n="about.title">Over Compyra</h2>
-                <div class="about-content">
-                    <div class="about-visual reveal">
-                        <svg class="about-watermark" aria-hidden="true"><use href="#i-shield"></use></svg>
-                        <div class="experience-badge" id="experienceBadge">
-                            <span id="yearsOfExperience" data-count-suffix="+">12+</span>
-                            <span data-i18n="about.years">Jaren Ervaring</span>
-                        </div>
-                    </div>
-                    <div class="about-text reveal">
-                        <p data-i18n="about.description1">Compyra biedt deskundige IT-beveiligings- en consultancydiensten aan bedrijven van alle groottes. Met uitgebreide ervaring in cyberbeveiliging, penetratietesten en webontwikkeling bieden wij complete oplossingen om uw digitale activa te beschermen.</p>
-                        <p data-i18n="about.description2">Beveiliging is niet alleen een beroep, het is onze passie. We blijven voorop lopen in beveiligingstrends en -technologieën om ervoor te zorgen dat onze klanten de meest effectieve bescherming krijgen tegen evoluerende bedreigingen.</p>
-                        <p data-i18n="about.experience">Sinds 2014 hebben we een reputatie opgebouwd voor uitmuntendheid in de IT-beveiligingsindustrie, door technische expertise te combineren met praktische bedrijfsoplossingen.</p>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener" class="social-link linkedin">
-                                <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg><span>LinkedIn</span>
-                            </a>
-                            <a href="https://www.facebook.com/compyra" target="_blank" rel="noopener" class="social-link facebook">
-                                <svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg><span>Facebook</span>
-                            </a>
-                        </div>
-                        <a href="https://labidi.eu" target="_blank" rel="noopener" class="projects-link">
-                            <span class="projects-link-text">
-                                <strong data-i18n="about.projects.title">Benieuwd wat ik bouw?</strong>
-                                <span data-i18n="about.projects.desc">Ontdek mijn persoonlijke projecten op labidi.eu.</span>
-                            </span>
-                            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="apps" class="apps" aria-labelledby="apps-title">
-            <div class="container">
-                <h2 id="apps-title" class="section-title reveal" data-i18n="apps.title">Apps</h2>
                 <div class="apps-panel reveal">
                     <div class="apps-copy">
-                        <h3 data-i18n="apps.heading">Android-apps op Google Play</h3>
+                        <h3 id="apps-heading" data-i18n="apps.heading">Android-apps op Google Play</h3>
                         <p data-i18n="apps.description">Naast klantenwerk ontwerp en publiceer ik ook mijn eigen Android-apps. Bekijk de volledige collectie op mijn Google Play-ontwikkelaarspagina.</p>
                         <p class="apps-note" data-i18n="apps.note">Ontwikkelaar: Rami Labidi</p>
                     </div>
@@ -381,54 +350,18 @@
             </div>
         </section>
 
-        <section id="contact" class="contact" aria-labelledby="contact-title">
+        <section id="contact-cta" aria-labelledby="contact-cta-title">
             <div class="container">
-                <h2 id="contact-title" class="section-title reveal" data-i18n="contact.title">Neem Contact Op</h2>
-                <div class="contact-content reveal">
-                    <div class="contact-text">
+                <div class="cta-panel reveal">
+                    <div class="cta-copy">
+                        <h2 id="contact-cta-title" data-i18n="contact.title">Neem Contact Op</h2>
                         <p data-i18n="contact.description">Klaar om uw bedrijf te beveiligen of heeft u IT-consultancy nodig? Neem vandaag nog contact met ons op.</p>
                     </div>
-                    <div class="contact-actions">
-                        <button id="contactButton" class="btn primary-btn">
+                    <div class="cta-actions">
+                        <a class="btn primary-btn" href="/contact/">
                             <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
-                            <span data-i18n="contact.button">Contact via E-mail</span>
-                        </button>
-                        <div class="email-copy">
-                            <span id="emailDisplay">contact@compyra.com</span>
-                            <button id="copyEmail" class="copy-btn" aria-label="Copy email address">
-                                <svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg>
-                            </button>
-                            <span id="copyNotification" class="copy-notification" role="status" data-i18n="contact.copied">Gekopieerd!</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-form">
-                        <h3 data-i18n="contact.form.title">Stuur mij een bericht op WhatsApp</h3>
-                        <form id="contactForm" novalidate>
-                            <div class="form-group">
-                                <label for="name" data-i18n="contact.form.name">Naam</label>
-                                <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" data-i18n="contact.form.email">E-mail</label>
-                                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="message" data-i18n="contact.form.message">Bericht</label>
-                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
-                            </div>
-                            <!-- Honeypot (anti-spam): must stay empty -->
-                            <div class="hp-field" aria-hidden="true">
-                                <label for="company">Company</label>
-                                <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-                            </div>
-                            <p id="formError" class="form-error" role="alert" hidden></p>
-                            <button type="submit" class="btn primary-btn submit-btn" data-i18n="contact.form.send">Versturen</button>
-                        </form>
-                        <div id="whatsappOption" class="form-success" hidden>
-                            <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
-                            <p data-i18n="contact.form.success">Bedankt voor uw bericht! WhatsApp wordt geopend zodat we het gesprek kunnen voortzetten.</p>
-                        </div>
+                            <span data-i18n="hero.contact">Neem Contact Op</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -437,25 +370,41 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>COMPYRA</h2>
-                    <p>compyra.com</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="/" aria-label="Compyra, home">
+                        <img src="/WL.png" alt="" class="logo-img logo-on-dark" width="40" height="40">
+                        <img src="/BL.svg" alt="" class="logo-img logo-on-light" width="40" height="40">
+                        <span class="brand-name">COMPYRA
+                            <span class="brand-sub" data-i18n="brand.sub">IT Beveiliging &amp; Consultancy</span>
+                        </span>
+                    </a>
+                    <p data-i18n="footer.tagline">Beveiligingsconsultancy, penetratietesten en met zorg gebouwde software, in het Engels, Nederlands en Frans.</p>
                 </div>
-                <nav class="footer-links" aria-label="Footer">
+                <nav class="footer-col" aria-label="Site">
+                    <h4 data-i18n="footer.site">Site</h4>
                     <ul>
-                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                        <li><a href="#services" data-i18n="nav.services">Diensten</a></li>
-                        <li><a href="#certifications" data-i18n="nav.certifications">Certificeringen</a></li>
-                        <li><a href="#about" data-i18n="nav.about">Over Ons</a></li>
-                        <li><a href="#apps" data-i18n="nav.apps">Apps</a></li>
-                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/" data-i18n="nav.home">Home</a></li>
+                        <li><a href="/services/" data-i18n="nav.services">Diensten</a></li>
+                        <li><a href="/certifications/" data-i18n="nav.certifications">Certificeringen</a></li>
+                        <li><a href="/projects/" data-i18n="nav.projects">Projecten</a></li>
+                        <li><a href="/about/" data-i18n="nav.aboutus">Wie We Zijn</a></li>
+                        <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="More">
+                    <h4 data-i18n="footer.more">Meer</h4>
+                    <ul>
                         <li><a href="/support/" data-i18n="nav.support">Ondersteuning</a></li>
+                        <li><a href="https://labidi.eu" target="_blank" rel="noopener">labidi.eu</a></li>
+                        <li><a href="https://play.google.com/store/apps/dev?id=4849332466549031771" target="_blank" rel="noopener">Google Play</a></li>
+                        <li><a href="https://www.linkedin.com/in/ramilabidi" target="_blank" rel="noopener">LinkedIn</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear">2026</span> Compyra. <span data-i18n="footer.rights">Alle Rechten Voorbehouden.</span></p>
+                <p data-i18n="footer.made">Ontworpen, gebouwd en beveiligd door Rami Labidi.</p>
             </div>
         </div>
     </footer>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>layout audit</title>
+<pre id="out">RUNNING</pre>
+<iframe id="f" style="border:0;height:900px;width:1440px"></iframe>
+<script>
+    const out = [];
+    const f = document.getElementById('f');
+
+    const tests = [
+        // [url, widthPx]  -> assert no horizontal overflow + header fits
+        ['/', 1440], ['/', 1200], ['/', 768], ['/', 390], ['/', 360],
+        ['/services/', 1440], ['/services/', 360],
+        ['/certifications/', 1280], ['/certifications/', 360],
+        ['/projects/', 1440], ['/projects/', 360],
+        ['/about/', 1440], ['/about/', 360],
+        ['/contact/', 1440], ['/contact/', 360],
+        ['/fr/', 1440], ['/fr/', 1200], ['/fr/', 1160], ['/fr/', 360],
+        ['/nl/', 1200], ['/nl/', 360],
+        ['/nl/about/', 1200],
+        ['/fr/contact/', 1152],
+        ['/support/', 1440], ['/support/', 360],
+        ['/info/', 1440], ['/info/', 360]
+    ];
+
+    function loadPage(url, width) {
+        return new Promise(resolve => {
+            f.style.width = width + 'px';
+            f.onload = () => setTimeout(() => resolve(f.contentWindow), 350);
+            f.src = url;
+        });
+    }
+
+    async function run() {
+        for (const [url, width] of tests) {
+            try {
+                const w = await loadPage(url, width);
+                const d = w.document;
+                const de = d.documentElement;
+                const overflowX = de.scrollWidth - de.clientWidth;
+                let line = `${url} @${width}: `;
+                const fails = [];
+                if (overflowX > 1) {
+                    // name the widest offenders
+                    const bad = [...d.querySelectorAll('*')]
+                        .filter(el => el.getBoundingClientRect().right > de.clientWidth + 1)
+                        .slice(0, 4)
+                        .map(el => el.tagName + '.' + (el.className && el.className.baseVal !== undefined ? el.className.baseVal : el.className || '').toString().split(' ')[0]);
+                    fails.push(`overflowX=${overflowX}px [${bad.join(', ')}]`);
+                }
+                const header = d.getElementById('site-header');
+                if (header) {
+                    const cont = header.querySelector('.container');
+                    const kids = [...cont.children];
+                    const contRight = cont.getBoundingClientRect().right;
+                    for (const k of kids) {
+                        if (k.getBoundingClientRect().right - contRight > 1) {
+                            fails.push(`header child ${k.className || k.tagName} spills ${Math.round(k.getBoundingClientRect().right - contRight)}px`);
+                        }
+                    }
+                    const nav = header.querySelector('nav');
+                    const burger = d.getElementById('mobileMenuBtn');
+                    const navVisible = nav && w.getComputedStyle(nav).display !== 'none';
+                    const burgerVisible = burger && w.getComputedStyle(burger).display !== 'none';
+                    if (width > 1150 && !navVisible) fails.push('nav hidden on desktop');
+                    if (width <= 1150 && navVisible) fails.push('nav visible under 1150');
+                    if (width <= 1150 && !burgerVisible) fails.push('hamburger missing');
+                    // header rows: brand and controls should share one row
+                    const brand = header.querySelector('.brand, .logo');
+                    const ctrl = header.querySelector('.header-controls, .theme-toggle');
+                    if (brand && ctrl && Math.abs(brand.getBoundingClientRect().top - ctrl.getBoundingClientRect().top) > 30) {
+                        fails.push('header wrapped to two rows');
+                    }
+                }
+                const year = d.getElementById('currentYear');
+                if (year && year.textContent !== String(new Date().getFullYear())) {
+                    fails.push(`year not updated (${year.textContent}) — JS failed?`);
+                }
+                out.push(line + (fails.length ? 'FAIL ' + fails.join(' | ') : 'PASS'));
+            } catch (e) {
+                out.push(`${url} @${width}: ERROR ${e.message}`);
+            }
+        }
+        document.getElementById('out').textContent = 'DONE\n' + out.join('\n');
+    }
+    run();
+</script>

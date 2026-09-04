@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Compyra — Company Information
+   Compyra · Company Information
    Official company / billing details with per-field and "copy all" copying.
    ========================================================================== */
 
@@ -112,12 +112,12 @@ async function copyText(text, message) {
         }
         showToast(message || 'Copied');
     } catch (e) {
-        showToast('Copy failed — please copy manually');
+        showToast('Copy failed, please copy manually');
     }
 }
 
 function buildAllText(data) {
-    const lines = ['Compyra — Company Information', '='.repeat(30), ''];
+    const lines = ['Compyra · Company Information', '='.repeat(30), ''];
     data.forEach(section => {
         lines.push(`[${section.title}]`);
         section.items.forEach(item => lines.push(`${item.label}: ${item.value}`));
